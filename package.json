@@ -1,0 +1,33 @@
+{
+  "name": "nextglass",
+  "version": "1.0.0",
+  "description": "NextGlass is a web application that uses your preferences in wine to suggest new wines to taste.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kw-8/nextglass.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kw-8/nextglass/issues"
+  },
+  "homepage": "https://github.com/kw-8/nextglass#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.14",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
