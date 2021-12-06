@@ -16,7 +16,7 @@ Rather than trying out new drinks and asking all of your friends for recommendat
 
 ### Bonus Features
 - Search
-- AWS - would require finding a good quality image for each wine (there are a lot)
+- AWS
 
 ## Technologies and Technical Challenges
 ### Backend: MongoDB and Express
