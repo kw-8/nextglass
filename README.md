@@ -21,7 +21,7 @@ Rather than trying out new drinks and asking all of your friends for recommendat
 ## Technologies and Technical Challenges
 ### Backend: MongoDB and Express
 - Relevant data is stored in columns
-  - Some of the columns contains an array, containing some amount of some 50+ tags
+  - Some of the columns contains an array, containing some of 50+ tags
 - Tables: users, collections, wines
 
 Technical Challenges:
