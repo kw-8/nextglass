@@ -37,4 +37,4 @@ Technical Challenges:
 - Reading data from the MongoDB database to feed into the recommendation model
 
 ## Group Members and Work Breakdown
-Katherine Wu, Malachi Coberley
+Katherine Wu, Malachi Coberley, David Chan
