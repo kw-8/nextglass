@@ -16,6 +16,7 @@ Rather than trying out new drinks and asking all of your friends for recommendat
 
 ### Bonus Features
 - Search
+- AWS
 
 ## Technologies and Technical Challenges
 ### Backend: MongoDB and Express
