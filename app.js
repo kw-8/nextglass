@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     password: "password"
   })
   user.save();
-  res.send("Hello World");
+  res.send("Hello World!!");
 });
 
 app.use("/api/users", users)
