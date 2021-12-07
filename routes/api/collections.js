@@ -5,6 +5,7 @@ const passport = require("passport");
 const Collection = require('../../models/Collection');
 
 // get all collections from current user
+// works when not using 
 router.get("/", passport.authenticate("jwt", { session: false} ), (req, res) => {
   Collection
   .find({user: req.user.id})
