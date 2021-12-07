@@ -5,7 +5,6 @@
   background-position: center;
   background-size: cover;
   height: calc(100vh - 50px);
-
 }
 .splash-header-hero-overlay {
   height: inherit;
@@ -53,6 +52,7 @@
   background-color: white;
   text-decoration: none;
   border-radius: 25px;
+  transition: all .4s ease;
 }
 
 .splash-signup-button {
@@ -65,8 +65,13 @@
   background-color: rgb(245, 180, 180);
   text-decoration: none;
   border-radius: 25px;
+  transition: all .4s ease;
 }
 
+.splash-login-button:hover {
+  background-color: rgb(245, 180, 180);
+}
 
-
-
+.splash-signup-button:hover {
+  background-color: rgb(255, 255, 255);
+}
