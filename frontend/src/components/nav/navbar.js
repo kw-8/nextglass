@@ -33,7 +33,7 @@ class NavBar extends React.Component {
   render() {
       return (
         <div className="nav-bar">
-            <h1>nextglass</h1>
+            <Link to={'/'}>NextGlass</Link>
             { this.getLinks() }
         </div>
       );
