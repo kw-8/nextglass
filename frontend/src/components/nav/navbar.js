@@ -32,7 +32,7 @@ class NavBar extends React.Component {
 
   render() {
       return (
-        <div>
+        <div className="nav-bar">
             <h1>nextglass</h1>
             { this.getLinks() }
         </div>
