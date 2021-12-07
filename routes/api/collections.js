@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const Collection = require('../../models/Collection');
 
+// get all collections from current user
 router.get("/", passport.authenticate("jwt", {session: false}), (req, res) => {
   Collection
   .find({user: req.user.id})
@@ -12,6 +13,7 @@ router.get("/", passport.authenticate("jwt", {session: false}), (req, res) => {
   .catch(err => res.status(404).json({ noCollectionsFound: "No collections found" }))
 })
 
+// create new collection 
 router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
   const { errors, isValid } = validateCollectionInput(req.body);
 
@@ -30,6 +32,7 @@ router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
     .then(collection => res.json(collection))
 })
 
+// update collection
 router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) => {
   const { errors, isValid } = validateCollectionInput(req.body);
 
