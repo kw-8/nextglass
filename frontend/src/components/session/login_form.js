@@ -15,17 +15,14 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Tweets page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/tweets');
+      this.props.history.push('/');
     }
 
-    // Set or clear errors
     this.setState({errors: nextProps.errors})
   }
 
-  // Handle field updates (called in the render method)
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -59,9 +56,10 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="session-form">
+            <h3>Sign In</h3>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
