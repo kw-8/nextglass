@@ -6,6 +6,8 @@ const users = require("./routes/api/users");
 const wines = require("./routes/api/wines");
 const collections = require("./routes/api/collections");
 const bodyParser = require('body-parser');
+const passport = require("passport");
+
 
 mongoose
   .connect(db, { useNewUrlParser: true })

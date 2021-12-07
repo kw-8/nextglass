@@ -12,16 +12,11 @@ router.get("/", (req, res) => {
 });
 
 // get wine by id
-router.get("/:id", (res, req) => {
+router.get("/:id", (req, res) => {
   Wine
     .findById(req.params.id)
     .then(wine => res.json(wine))
     .catch(err => res.status(400).json(err))
-})
-
-router.get(`/${tag}`, (res, rep) => {
-  Wine
-    .sort
-})
+});
 
 module.exports = router;
