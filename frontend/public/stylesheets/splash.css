@@ -6,6 +6,7 @@
   border-radius: 6px;
   border: 1px solid rgb(51, 51, 51);
   box-sizing: border-box;
+  box-shadow: 1px 1px 4px black;
 
   overflow: hidden;
 }
