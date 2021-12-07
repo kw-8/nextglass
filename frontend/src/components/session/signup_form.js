@@ -59,6 +59,7 @@ class SignupForm extends React.Component {
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="session-form">
+            <h3>Sign Up</h3>
             <br/>
               <input type="text"
                 value={this.state.email}
