@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const wines = require("./routes/api/wines");
+const collections = require("./routes/api/collections");
 const bodyParser = require('body-parser');
 
 mongoose
@@ -22,6 +23,7 @@ require("./config/passport")(passport);
 
 app.use("/api/users", users)
 app.use("/api/wines", wines)
+app.use("/api/collections", collections)
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {console.log(`Listening on port ${port}`)});

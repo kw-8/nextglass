@@ -36,6 +36,10 @@ module.exports = function validateWineInput(data) {
     errors.tags = "Tags are required";
   }
 
+  if (Validator.isEmpty(data.tagIndex)) {
+    errors.tags = "Tag indices are required";
+  }
+
   return {
     errors,
     isValid: Object.keys(errors).length === 0

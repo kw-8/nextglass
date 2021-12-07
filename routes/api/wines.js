@@ -15,8 +15,13 @@ router.get("/", (req, res) => {
 router.get("/:id", (res, req) => {
   Wine
     .findById(req.params.id)
-    .then(tweet => res.json(wine))
+    .then(wine => res.json(wine))
     .catch(err => res.status(400).json(err))
+})
+
+router.get(`/${tag}`, (res, rep) => {
+  Wine
+    .sort
 })
 
 module.exports = router;
