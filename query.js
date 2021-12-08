@@ -9,27 +9,13 @@ mongoose
 
 
 let tags = []
-let primary_tag = tags[0]
-let other_tags = tags[1,4]
+let primary_tag = tags.slice(0,1)
+let other_tags = tags.slice(1,4)
 let min_price = 15-5
 let max_price = 15+5
-tagIndex = true ? `tagIndex: {$in: [9]}` : ''
-console.log(tagIndex)
-Wine.find(
-  {
-    [$cond: primary_tag, {tagIndex: {$elemMatch: {$in: tags}}}, {}]
-      // $cond: [ $size{tags} , {$in: tags} , {} ]
-  },
-  {
-  // tagIndex,
-  // tagIndex: {
-  //   $in: tags
-  // },
-  price: {
-    $gte: min_price - 2,
-    $lte: max_price + 2
-  }
-}).limit(10)
+// tagIndex = true ? `tagIndex: {$in: [9]}` : ''
+// console.log(tagIndex)
+Wine.find().limit(10)
   .then(wines => {
     console.log(wines.map(wine => wine.price), 'end')
   })
