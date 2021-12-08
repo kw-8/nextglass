@@ -17,14 +17,14 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div>
-                <button onClick={this.logoutUser}>Logout</button>
+                <button onClick={this.logoutUser} className="nav-logout">Logout</button>
             </div>
         );
       } else {
         return (
             <div>
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+                <Link to={'/login'} className="nav-login">Login</Link>
+                <Link to={'/signup'} className="nav-signup">Signup</Link>
             </div>
         );
       }
