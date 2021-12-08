@@ -44,4 +44,12 @@ router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) 
   if (!isValid) { return res.status(400).json(errors); };
 });
 
+// delete collection
+router.delete("/:", passport.authenticate("jwt", { session: false }), (req, res) => {
+  Collection 
+    .findByIdAndDelete(req.params.id)
+    .then(collection => res.json(collection))
+    .catch(err => res.status(404).json(err))
+});
+
 module.exports = router;
