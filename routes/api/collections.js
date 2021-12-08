@@ -16,10 +16,36 @@ router.get("/", passport.authenticate("jwt", { session: false} ), (req, res) => 
 
 // get collection by id
 router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) => {
-  Collection
+  let wines = req.params.wines
+  
+  // for each tag on each wine, add to tag counter in tags
+  let tags = {};
+  wines.forEach(wineId => {
+    Wines.find(wineId).then(wine => {
+
+      // if tagId exists in tags, count up, o/w set to 1
+      wtags.forEach(tagId =>
+        tags[tagId] = tags[tagId] ? tags[tagId] + 1 : 1
+      )
+    })
+  });
+  // sort tags by counts
+  let entries = Object.entries(tags)
+  let sortedTags = entries.sort((a,b) => a[1] > b[1]).map(tag => tag[0])
+
+  const collection = Collection
     .findById(req.params.id)
     .then(collection => (res.json(collection)))
     .catch(err => res.status(400).json(err))
+  const suggestions = Wines
+    .find({
+      tagIndex: {in: [sortedTags[0]]}
+    }).limit(10)
+    .then(collection => (res.json(collection)))
+    .catch(err => res.status(400).json(err))
+  
+  res.json({ collection, suggestions })
+  
 });
 
 // create new collection 
