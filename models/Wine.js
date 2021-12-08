@@ -9,8 +9,8 @@ const WineSchema = new Schema({
   title: { type: String, required: true },
   variety: { type: String, required: true },
   winery: { type: String, required: true },
-  tags: { type: String, required: true },
-  tagIndex: { type: String, required: true}
+  tags: { type: Array, required: true },
+  tagIndex: { type: Array, required: true}
 })
 
 module.exports = Wine = mongoose.model('Wine', WineSchema);
