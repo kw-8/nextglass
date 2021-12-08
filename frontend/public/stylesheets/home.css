@@ -1,0 +1,21 @@
+.home-page-header {
+  background-image: url("../home-page-wine-shelf.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+}
+.home-page-header-overlay {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 96px;
+  color: white;
+  height: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  background-color: rgba(84, 79, 84, 0.515);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
