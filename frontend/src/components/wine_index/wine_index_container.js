@@ -4,7 +4,7 @@ import WineIndex from './wine_index'
 
 
 const mSTP = state => ({
-  state
+  wines: Object.values(state.wines)
 })
 
 const mDTP = dispatch => ({
