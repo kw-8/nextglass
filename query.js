@@ -9,11 +9,18 @@ mongoose
 
 
 let tags = []
-let min_price = 15
-let max_price = 15
+let primary_tag = tags[0]
+let other_tags = tags[1,4]
+let min_price = 15-5
+let max_price = 15+5
 tagIndex = true ? `tagIndex: {$in: [9]}` : ''
 console.log(tagIndex)
-Wine.find({
+Wine.find(
+  {
+    [$cond: primary_tag, {tagIndex: {$elemMatch: {$in: tags}}}, {}]
+      // $cond: [ $size{tags} , {$in: tags} , {} ]
+  },
+  {
   // tagIndex,
   // tagIndex: {
   //   $in: tags

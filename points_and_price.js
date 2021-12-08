@@ -10,7 +10,7 @@ mongoose
 // convert all price and points values to integers
 Wine.find()
   .then(wines => {
-    // console.log(parseInt(wine.points))
+    console.log(parseInt(wine.points))
     // console.log(parseInt(wine.price))
     // wines.forEach(wine => {
     //   // console.log('outside')
