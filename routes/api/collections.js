@@ -40,7 +40,7 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
   const suggestions = Wines
     .find({
       tagIndex: {in: [sortedTags[0]]}
-    })
+    }).limit(10)
     .then(collection => (res.json(collection)))
     .catch(err => res.status(400).json(err))
   
