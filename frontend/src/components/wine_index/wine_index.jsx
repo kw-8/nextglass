@@ -4,17 +4,20 @@ class WineIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllWines()
-    console.log(this.props)
   }
 
   render() {
     const {wines} = this.props
+    let i = 20;
+    const wineArray = wines.slice(0, this.props.currentPage * i);
     return <div className="post-index">
       {
-        wines.map((wine, i) => {
-          return <p>{`${wine.title}`}</p>
+        wineArray.map((wine) => {
+          return <p>{`${wine.title} :::: ${wine.description} :::: ${wine.tags}`}</p>
         })
       }
+      <button onClick={() => {console.log(wines)}}>
+      Load More</button>
     </div>
   }
 }
