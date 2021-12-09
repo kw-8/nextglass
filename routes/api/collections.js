@@ -20,29 +20,34 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
   const collection = Collection
     .findById(req.params.id)
     .then(collection => {
+
+      /* GET AND SORT WINE TAGS */
       let wines = collection.wines
-      // for each tag on each wine, add to tag counter in tags
-      let tags = {};
+      let tags = {}
       wines.forEach(wineId => {
-        Wine.find(wineId).then(wine => {
+        Wine.findById(wineId).then(wine => {
           // if tagId exists in tags, count up, o/w set to 1
-          wtags.forEach(tagId =>
+          wine.tagIndex.forEach(tagId =>
             tags[tagId] = tags[tagId] ? tags[tagId] + 1 : 1
           )
         })
       });
-
-      // sort tags by counts
       let entries = Object.entries(tags)
       let sortedTags = entries.sort((a,b) => a[1] > b[1]).map(tag => tag[0])
       while (sortedTags.length < 4) {
         sortedTags.push(Math.floor(Math.random() * 56) + 1)
       }
 
+      /* GET MIN AND MAX PRICE */
+      // let min_price = (wines === []) ? 0 : wines.map(wine => wine.price).reduce((a, b) => (Math.min(a, b), 0))
+      // let max_price = (wines === []) ? 10000 : wines.map(wine => wine.price).reduce((a, b) => (Math.max(a, b), 0))
+
+      /* GET MIN AND MAX POINTS */
+
       let primary_tag = sortedTags.slice(0, 1)
       let other_tags = sortedTags.slice(1, 4)
-      // let min_price = 15 * 0.6
-      // let max_price = 15 * 1.8
+      // min_price *= 0.6
+      // max_price *= 1.8
 
       return Wine.find({
         _id: { $nin: wines },
