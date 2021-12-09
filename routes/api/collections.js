@@ -25,7 +25,7 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
       let wines = collection.wines
       let tags = {}
       wines.forEach(wineId => {
-        Wine.find(wineId).then(wine => {
+        Wine.findById(wineId).then(wine => {
           // if tagId exists in tags, count up, o/w set to 1
           wine.tagIndex.forEach(tagId =>
             tags[tagId] = tags[tagId] ? tags[tagId] + 1 : 1
