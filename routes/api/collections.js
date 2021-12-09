@@ -91,7 +91,7 @@ router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) 
       } else {
         collection.title = req.body.title,
         collection.description = req.body.description,
-        wines = req.body.wines
+        collection.wines = req.body.wines
       }
     })
 });
