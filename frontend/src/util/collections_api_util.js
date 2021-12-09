@@ -22,7 +22,7 @@ export const createCollection = collection => {
 
 // update collection
 export const updateCollection = collection => {
-  return axios.patch(`/api/collections/${collection.id}`, collection)
+  return axios.patch(`/api/collections/${collection._id}`, collection)
 }
 
 export const deleteCollection = collectionId => {

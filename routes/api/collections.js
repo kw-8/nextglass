@@ -77,11 +77,12 @@ router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
 
 // update collection
 router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) => {
-  const { errors, isValid } = validateCollectionInput(req.body);
-  if (!isValid) { return res.status(400).json(errors); };
+  // Malachi commented these out, sorry.
+  // const { errors, isValid } = validateCollectionInput(req.body);
+  // if (!isValid) { return res.status(400).json(errors); };
 
   Collection
-    .findById(req.params.id)
+    .findById(req.body._id)
     .then(collection => {
       if (!collection) {
         return res.status(404).json(errors);
@@ -89,6 +90,7 @@ router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) 
         collection.title = req.body.title,
         collection.description = req.body.description,
         collection.wines = req.body.wines
+        collection.save()
       }
     })
 });
