@@ -28,7 +28,6 @@ class WineIndex extends React.Component {
            />
         })
       }
-      <button className="load-more-wines" onClick={() => {}}>Load More Wine</button>
     </div>
   }
 }
