@@ -97,7 +97,7 @@ router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) 
 });
 
 // delete collection
-router.delete("/:", passport.authenticate("jwt", { session: false }), (req, res) => {
+router.delete("/:id", passport.authenticate("jwt", { session: false }), (req, res) => {
   Collection 
     .findByIdAndDelete(req.params.id)
     .then(collection => res.json(collection))
