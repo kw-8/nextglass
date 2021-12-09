@@ -12,12 +12,13 @@ Wine.find()
     wines.forEach(wine => {
       // console.log('outside')
       if (typeof wine.tagIndex[0] === 'string') {
-        console.log('inside')
+        // console.log('inside')
         wine.tags = wine.tags[0].split(', '),
         wine.tagIndex = wine.tagIndex[0].split(', ').map(id => parseInt(id))
         wine.save()
       }
     })
+    console.log('end')
   })
 
 // Wine.find().forEach
