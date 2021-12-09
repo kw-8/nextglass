@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
 const Collection = require('../../models/Collection');
+const validateCollectionInput = require("../../validation/collections")
 
 // get all collections from current user
 // works when not using 
@@ -63,8 +64,8 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
 
 // create new collection 
 router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
-  // const { errors, isValid } = validateCollectionInput(req.body);
-  // if (!isValid) { return res.status(400).json(errors); };
+  const { errors, isValid } = validateCollectionInput(req.body);
+  if (!isValid) { return res.status(400).json(errors); };
 
   const newCollection = new Collection({
     user: req.user.id,
@@ -81,6 +82,18 @@ router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
 router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) => {
   const { errors, isValid } = validateCollectionInput(req.body);
   if (!isValid) { return res.status(400).json(errors); };
+
+  Collection
+    .findById(req.params.id)
+    .then(collection => {
+      if (!collection) {
+        return res.status(404).json(errors);
+      } else {
+        collection.title = req.body.title,
+        collection.description = req.body.description,
+        wines = req.body.wines
+      }
+    })
 });
 
 // delete collection
