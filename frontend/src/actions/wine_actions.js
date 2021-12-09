@@ -3,12 +3,12 @@ import * as APIUtil from '../util/wines_api_util';
 export const RECEIVE_ALL_WINES = "RECEIVE_ALL_WINES";
 export const RECEIVE_ONE_WINE = "RECEIVE_ONE_WINE";
 
-export const receiveAllWines = wines => ({
+const receiveAllWines = wines => ({
   type: RECEIVE_ALL_WINES,
   wines
 });
 
-export const receiveOneWine = wine => ({
+const receiveOneWine = wine => ({
   type: RECEIVE_ONE_WINE,
   wine
 });
