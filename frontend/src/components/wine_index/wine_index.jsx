@@ -1,9 +1,21 @@
 import React from 'react';
+import WineIndexItem from './wine_index_item'
 
 class WineIndex extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.handscroll = this.handleScroll.bind(this)
+  }
 
   componentDidMount() {
     this.props.fetchAllWines()
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll() {
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+    console.log("congrats on scrolling")
   }
 
   render() {
@@ -13,11 +25,9 @@ class WineIndex extends React.Component {
     return <div className="post-index">
       {
         wineArray.map((wine) => {
-          return <p>{`${wine.title} :::: ${wine.description} :::: ${wine.tags}`}</p>
+          return <WineIndexItem title={wine.title} description={wine.description} tags={wine.tags} />
         })
       }
-      <button onClick={() => {console.log(wines)}}>
-      Load More</button>
     </div>
   }
 }
