@@ -1,43 +1,77 @@
-
+.wine-index {
+  background-image: url("../splash-hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 /*Styling for Wine Index Items*/
 .wine-index-item-container {
-  position: sticky;
-  top: 50px;
-  height: 100px;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 5px 20px;
-  border-top: 1px solid black;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(255, 180, 17, 0.24);
   border-left: 1px solid black;
-  background-color: rgb(249, 189, 255);
+  background-color: rgba(0, 0, 0, 0.555);
+  transition: all .9s ease;
 }
 
+.wine-index-item-container:hover {
+  background-color: rgba(0, 0, 0, 0.950);
+  border-top: 1px solid rgba(255, 180, 17, 0.500);
+}
 .wine-index-item-container:last-of-type {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(255, 180, 17, 0.24);
 }
 
 .wine-image {
-  width: 10vw;
+  background-image: url("../wine-icon-placeholder.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0.467);
+  margin: 15px;
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 40%;
+}
+
+.wine-details-container {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
 .wine-title {
-  width: 20vw;
+  font-family: 'Tenor Sans', sans-serif;
+  color: rgb(245, 180, 180);
+  width: 60vw;
+  border-bottom: 1px dashed rgb(245, 180, 180);
 }
 
 .wine-description {
-  width: 30vw;
+  font-size: 20px;
+  width: 60vw;
 }
 
 .wine-tag-container {
+  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 35vw;
+  justify-content: space-around;
+  width: 60vw;
 }
 
 .wine-tag {
-  margin: 0 5px;
+  margin-right: 5px;
 }

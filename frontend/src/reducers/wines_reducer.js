@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_WINES, RECEIVE_ONE_WINE } from '../actions/wine_actions'
+import { RECEIVE_ALL_WINES, RECEIVE_ONE_WINE} from '../actions/wine_actions'
 
 
 const WinesReducer = (state = {}, action) => {
