@@ -6,7 +6,7 @@ module.exports = function validateCollectionInput(data) {
 
   if (Validator.isEmpty(data.title)) { errors.title = "Title is required"; };
   if (Validator.isEmpty(data.description)) { errors.description = "Description is required"; };
-  if (Validator.isEmpty(data.wines)) { errors.description = "Must add at least 1 wine"; };
+  // if (Validator.isEmpty(data.wines)) { errors.description = "Must add at least 1 wine"; };
 
   return {
     errors,
