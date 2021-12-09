@@ -1,0 +1,43 @@
+
+
+/*Styling for Wine Index Items*/
+.wine-index-item-container {
+  position: sticky;
+  top: 50px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 20px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  background-color: rgb(249, 189, 255);
+}
+
+.wine-index-item-container:last-of-type {
+  border-bottom: 1px solid black;
+}
+
+.wine-image {
+  width: 10vw;
+}
+
+.wine-title {
+  width: 20vw;
+}
+
+.wine-description {
+  width: 30vw;
+}
+
+.wine-tag-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 35vw;
+}
+
+.wine-tag {
+  margin: 0 5px;
+}

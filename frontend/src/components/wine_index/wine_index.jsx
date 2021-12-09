@@ -28,6 +28,7 @@ class WineIndex extends React.Component {
           return <WineIndexItem title={wine.title} description={wine.description} tags={wine.tags} />
         })
       }
+      <button className="load-more-wines">Load More Wine</button>
     </div>
   }
 }
