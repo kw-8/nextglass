@@ -18,7 +18,9 @@ class MainPage extends React.Component {
         </div>
         <div className="home-page-index-link">
           <Link to="/wines">Find a wine</Link>
-          <Link to="/collections">view your collections</Link>
+          {
+            this.props.collections.map(collection => <Link to={`/collections/${collection._id}`}>{collection.title}</Link>)
+          }
         </div>
       </div>
     );

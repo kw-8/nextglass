@@ -1,10 +1,13 @@
 import React from 'react';
+import { useLocation, useParams } from 'react-router';
 import WineIndexItem from './wine_index_item'
 
 class WineIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllWines()
+    this.props.getCollections()
+    console.log(this.props)
   }
 
   render() {
@@ -15,7 +18,14 @@ class WineIndex extends React.Component {
     return <div className="wine-index">
       {
         wineArray.map((wine) => {
-          return <WineIndexItem key={wine.id} title={wine.title} description={wine.description} tags={wine.tags} />
+          return <WineIndexItem 
+          id={wine._id} 
+          title={wine.title} 
+          description={wine.description} 
+          tags={wine.tags} 
+          updateCollection={this.props.updateCollection}
+          usersCollections={this.props.collections}
+           />
         })
       }
       <button className="load-more-wines" onClick={() => {}}>Load More Wine</button>
