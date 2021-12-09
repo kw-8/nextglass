@@ -14,7 +14,8 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     res.json({
       id: req.user.id,
       username: req.user.username,
-      email: req.user.email
+      email: req.user.email,
+      collections: req.user.collections
     }); 
   }
 );
@@ -34,7 +35,8 @@ router.post('/register', (req, res) => {
         const newUser = new User({
           username: req.body.username,
           email: req.body.email,
-          password: req.body.password
+          password: req.body.password,
+          collections: req.body.collections
         });
         // salt and hash new user's password before storing in db & saving user
         bcrypt.genSalt(10, (err, salt) => {
