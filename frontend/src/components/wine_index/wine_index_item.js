@@ -14,6 +14,7 @@ const WineIndexItem = (props) => (
         }
       </div>
     </div>
+    <button className="wine-index-add-button">Add to Collection</button>
   </div>
 )
 
