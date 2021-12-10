@@ -31,14 +31,15 @@ class WineIndexItem extends React.Component {
             }
           </div>
         </div>
-        <label>Choose a Collection
-        <select id={this.props.id}>
-          {
-            collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
-          }
-        </select> 
-        </label>
-        <button className="wine-index-add-button" onClick={() => this.handleSubmit()}>Add to Collection</button>
+        <div className="collection-adder">
+          <label>Choose a Collection</label>
+          <select id={this.props.id}>
+            {
+              collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
+            }
+          </select> 
+          <button className="wine-index-add-button" onClick={() => this.handleSubmit()}>Add to Collection</button>
+        </div>
       </div>
     )
   }
