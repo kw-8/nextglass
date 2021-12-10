@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
+import { getCollection } from './actions/collection_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -23,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});
   }
   const root = document.getElementById('root');
+
+  window.dispatch = store.dispatch;
+  window.getCollection = getCollection;
 
   ReactDOM.render(<Root store={store} />, root);
 });

@@ -1,9 +1,22 @@
 import React from 'react';
-import { updateCollection } from '../../util/collections_api_util';
 
 class WineIndexItem extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit() {
+    let selectedCollection = document.getElementById(this.props.id)
+    const updatedCollection = Object.assign({}, this.props.usersCollections[selectedCollection.value])
+    updatedCollection.wines.push(this.props.id)
+    this.props.updateCollection(updatedCollection)
+  }
 
   render() {
+    const collectionsArray = Object.values(this.props.usersCollections)
+    console.log(collectionsArray)
     return (
       <div className="wine-index-item-container">
         <div className="wine-image"></div>
@@ -18,13 +31,15 @@ class WineIndexItem extends React.Component {
             }
           </div>
         </div>
-        {/* conditionally render button if a wine is not included in the collection. does not work for empty collections */}
-        {/*  !Object.values(this.props.usersCollections[0].wines).includes(this.props.id) && <button className="wine-index-add-button">Add to Collection</button> */}
-        <button className="wine-index-add-button" onClick={() => {
-          const updatedCollection = Object.assign({}, this.props.usersCollections[0])
-          updatedCollection.wines.push(this.props.id)
-          this.props.updateCollection(updatedCollection)
-          }}>Add to Collection</button> 
+        <div className="collection-adder">
+          <label>Choose a Collection</label>
+          <select id={this.props.id}>
+            {
+              collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
+            }
+          </select> 
+          <button className="wine-index-add-button" onClick={() => this.handleSubmit()}>Add to Collection</button>
+        </div>
       </div>
     )
   }

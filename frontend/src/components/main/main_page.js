@@ -20,7 +20,6 @@ class MainPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const coll = Object.assign({}, this.state, {user: this.props.currentUser.id}, {wines: []})
-    
     this.props.createCollection(coll)
   }
 
