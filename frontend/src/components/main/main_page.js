@@ -28,25 +28,31 @@ class MainPage extends React.Component {
       <div className="main-page-contaner">
         <div className="home-page-header">
           <div className="home-page-header-overlay">
-            <h1>Home Page</h1>
+            <h1>Find your next glass...</h1>
           </div>
         </div>
         <div className="home-page-index-link">
           <Link to="/wines">Find a wine</Link>
-          <div id='collections-carousel'>
+          <h2>Your Collections</h2>
+          <div id='user-collections'>
             {
-              this.props.collections.map(collection => <Link to={`/collections/${collection._id}`}>{collection.title}</Link>)
+              this.props.collections.map(collection =>
+                <div>
+                  <Link to={`/collections/${collection._id}`}>{collection.title}</Link>
+                </div>
+              )
             }
           </div>
           <Link to="/collections">view your collections</Link>
-          <form>
+          <h2>Create a new collection</h2>
+          <form id="collection-form">
             <label htmlFor='title'></label>
             <input type='text' id='title' placeholder='Collection Name' onChange={this.update('title')}></input>
             
             <label htmlFor='title'></label>
-            <input type='text' id='description' placeholder='Description' onChange={this.update('description')}></input>
+            <textarea id='description' placeholder='Description' onChange={this.update('description')}></textarea>
             
-            <button onClick={this.handleSubmit}>Create Collection</button>
+            <button onClick={this.handleSubmit}>Create</button>
           </form>
         </div>
       </div>

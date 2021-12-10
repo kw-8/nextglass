@@ -3,12 +3,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 300px;
+  height: 400px;
 }
 .home-page-header-overlay {
-  font-family: 'Tenor Sans', sans-serif;
-  font-size: 96px;
-  color: white;
   height: inherit;
   position: absolute;
   left: 0;
@@ -19,16 +16,82 @@
   flex-direction: column;
   align-items: center;
 }
-
-#collections-carousel {
-  height: 200px;
-  display: flex;
-  flex-direction: row;
+.home-page-header-overlay > h1 {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 80px;
+  color: white;
+  margin: 30px;
+  line-height: normal;
 }
 
-#collections-carousel > a {
-  height: inherit;
-  width: 300px;
-  min-width: 300px;
-  border: 1px solid wheat;
+.home-page-index-link {
+  background-color: rgb(250, 250, 250);
+}
+
+#user-collections {
+  margin-left: 60px;
+  margin-right: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+}
+
+#user-collections > div {
+  height: 200px;
+  width: 200px;
+  background-color: tomato;
+
+  margin: 10px;
+  margin-top: 0;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#user-collections > div > a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 0 3px black;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-left: 60px;
+  font-family: 'Sacramento';
+  font-size: 28px;
+}
+
+#collection-form {
+  max-width: 400px;
+  margin-left: 70px;
+  margin-bottom: 26px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+}
+
+input, textarea {
+  resize: none;
+  font-family: 'Roboto';
+  margin: 10px;
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+}
+button {
+  margin: 10px;
+  background-color: #e05a5a;
+  border: 1px solid rgb(224, 86, 86);
+  color: white;
+}
+input, textarea, button {
+  border-radius: 3px;
+  padding: 10px;
 }
