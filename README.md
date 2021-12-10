@@ -9,14 +9,14 @@ Rather than trying out new drinks and asking all of your friends for recommendat
 - User auth: sign up, login, logout
 - Collection: create, edit, delete
 - Collection page
-- Suggestions: with tensorflow
 - Landing page with categories
-- Wine: create
 - Production README
+- Team Links
 
 ### Bonus Features
 - Search
-- AWS
+- Wine: create
+- Suggestions: with tensorflow
 
 ## Technologies and Technical Challenges
 ### Backend: MongoDB and Express
@@ -48,13 +48,13 @@ Katherine Wu, Malachi Coberley, David Chan
 
 ### Day 2
 - Finish up user auth, start collections - ***David***
-- Finish preliminary model, figure out how to connect to MongoDB database - ***Katherine***
+- Simple recommendation model - ***Katherine***
 - Landing page skeleton, start individual collection page skeleton - ***Malachi***
 - Discuss how to implement curated collections - ***All***
 
 ### Day 3
 - Work on implementing curated collections on landing page - ***David, Malachi***
-- Connect model to MongoDB database. Pitch in where needed - ***Katherine***
+- Hammer out bugs in day 2's model, pitch in where needed - ***Katherine***
 - Meet to discuss what needs to be done and plan the next few days - ***All***
 
 ### Day 4
