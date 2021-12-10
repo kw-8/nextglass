@@ -14,3 +14,35 @@
   height: inherit;
   width: inherit;
 }
+
+.suggested-wine {
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray;
+}
+.wine-img {
+  min-width: 120px;
+  max-width: 120px;
+  height: 100%;
+  overflow: hidden;
+}
+.wine-img img {
+  max-height: 200%;
+  max-width: 200%;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 120px; */
+}
+.wine-text {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.suggested-wine-title {
+  font-family: 'Tenor Sans';
+  font-size: 24px;
+}
+.suggested-wine-tag-container {
+  display: flex;
+  flex-direction: row;
+}

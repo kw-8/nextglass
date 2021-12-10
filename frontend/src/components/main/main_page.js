@@ -24,7 +24,7 @@ class MainPage extends React.Component {
   }
   
   render() {
-    let icons = ['/rose.png', '/white_wine_2.png', '/public/four_bottles.jpg']
+    let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
     return (
       <div className="main-page-contaner">
         <div className="home-page-header">
