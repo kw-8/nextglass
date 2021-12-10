@@ -5,7 +5,7 @@ const CollectionsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_COLLECTIONS:
-      return action.collections;
+      return action.collections.data;
     case RECEIVE_COLLECTION:
       console.log(action); 
       debugger

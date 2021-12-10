@@ -1,21 +1,48 @@
 import React from 'react';
 
-const WineIndexItem = (props) => (
-  <div className="wine-index-item-container" key={props.key}>
-    <div className="wine-image"></div>
-    <div className="wine-details-container">
-      <h4 className="wine-title">{props.title}</h4>
-      <p className="wine-description">{props.description}</p>
-      <div className="wine-tag-container">
-        {
-          props.tags.map(tag => (
-            <div className="wine-tag">{tag}</div>
-          ))
-        }
+class WineIndexItem extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit() {
+    let selectedCollection = document.getElementById(this.props.id)
+    const updatedCollection = Object.assign({}, this.props.usersCollections[selectedCollection.value])
+    updatedCollection.wines.push(this.props.id)
+    this.props.updateCollection(updatedCollection)
+  }
+
+  render() {
+    const collectionsArray = Object.values(this.props.usersCollections)
+    console.log(collectionsArray)
+    return (
+      <div className="wine-index-item-container">
+        <div className="wine-image"></div>
+        <div className="wine-details-container">
+          <h4 className="wine-title">{this.props.title}</h4>
+          <p className="wine-description">{this.props.description}</p>
+          <div className="wine-tag-container">
+            {
+              this.props.tags.map(tag => (
+                <div className="wine-tag">{tag}</div>
+              ))
+            }
+          </div>
+        </div>
+        <div className="collection-adder">
+          <label>Choose a Collection</label>
+          <select id={this.props.id}>
+            {
+              collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
+            }
+          </select> 
+          <button className="wine-index-add-button" onClick={() => this.handleSubmit()}>Add to Collection</button>
+        </div>
       </div>
-    </div>
-    <button className="wine-index-add-button">Add to Collection</button>
-  </div>
-)
+    )
+  }
+}
 
 export default WineIndexItem

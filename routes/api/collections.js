@@ -24,6 +24,7 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
       /* GET AND SORT WINE TAGS */
       let wines = collection.wines
       let tags = {}
+      let min_price, max_price, min_points, max_points;
       wines.forEach(wineId => {
         Wine.findById(wineId).then(wine => {
           // if tagId exists in tags, count up, o/w set to 1
@@ -37,12 +38,10 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
       while (sortedTags.length < 4) {
         sortedTags.push(Math.floor(Math.random() * 56) + 1)
       }
-
-      /* GET MIN AND MAX PRICE */
-      // let min_price = (wines === []) ? 0 : wines.map(wine => wine.price).reduce((a, b) => (Math.min(a, b), 0))
-      // let max_price = (wines === []) ? 10000 : wines.map(wine => wine.price).reduce((a, b) => (Math.max(a, b), 0))
-
-      /* GET MIN AND MAX POINTS */
+      min_price ? min_price : 0
+      max_price ? max_price : 10000
+      min_points ? min_points : 0
+      max_points ? max_points : 100
 
       let primary_tag = sortedTags.slice(0, 1)
       let other_tags = sortedTags.slice(1, 4)
@@ -82,11 +81,12 @@ router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
 
 // update collection
 router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) => {
-  const { errors, isValid } = validateCollectionInput(req.body);
-  if (!isValid) { return res.status(400).json(errors); };
+  // Malachi commented these out, sorry.
+  // const { errors, isValid } = validateCollectionInput(req.body);
+  // if (!isValid) { return res.status(400).json(errors); };
 
   Collection
-    .findById(req.params.id)
+    .findById(req.body._id)
     .then(collection => {
       if (!collection) {
         return res.status(404).json(errors);
@@ -94,6 +94,7 @@ router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) 
         collection.title = req.body.title,
         collection.description = req.body.description,
         collection.wines = req.body.wines
+        collection.save()
       }
     })
 });
