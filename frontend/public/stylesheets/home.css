@@ -19,3 +19,16 @@
   flex-direction: column;
   align-items: center;
 }
+
+#collections-carousel {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+#collections-carousel > a {
+  height: inherit;
+  width: 300px;
+  min-width: 300px;
+  border: 1px solid wheat;
+}

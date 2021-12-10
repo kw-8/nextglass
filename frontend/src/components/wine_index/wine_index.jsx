@@ -7,7 +7,6 @@ class WineIndex extends React.Component {
   componentDidMount() {
     this.props.fetchAllWines()
     this.props.getCollections()
-    console.log(this.props)
   }
 
   render() {

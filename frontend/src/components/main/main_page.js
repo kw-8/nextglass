@@ -5,7 +5,6 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.getCollections()
-    // debugger
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,7 +21,6 @@ class MainPage extends React.Component {
     e.preventDefault();
     const coll = Object.assign({}, this.state, {user: this.props.currentUser.id}, {wines: []})
     
-    // debugger
     this.props.createCollection(coll)
   }
 
@@ -36,9 +34,11 @@ class MainPage extends React.Component {
         </div>
         <div className="home-page-index-link">
           <Link to="/wines">Find a wine</Link>
-          {
-            this.props.collections.map(collection => <Link to={`/collections/${collection._id}`}>{collection.title}</Link>)
-          }
+          <div id='collections-carousel'>
+            {
+              this.props.collections.map(collection => <Link to={`/collections/${collection._id}`}>{collection.title}</Link>)
+            }
+          </div>
           <Link to="/collections">view your collections</Link>
           <form>
             <label htmlFor='title'></label>

@@ -23,7 +23,6 @@ class WineIndexItem extends React.Component {
         <button className="wine-index-add-button" onClick={() => {
           const updatedCollection = Object.assign({}, this.props.usersCollections[0])
           updatedCollection.wines.push(this.props.id)
-          console.log(updatedCollection)
           this.props.updateCollection(updatedCollection)
           }}>Add to Collection</button> 
       </div>
