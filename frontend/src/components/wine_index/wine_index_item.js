@@ -1,5 +1,4 @@
 import React from 'react';
-import { updateCollection } from '../../util/collections_api_util';
 
 class WineIndexItem extends React.Component {
   constructor(props){
