@@ -8,10 +8,11 @@ import SignupFormContainer from './session/signup_form_container';
 import Splash from './splash/splash';
 import WineIndexContainer from './wine_index/wine_index_container'
 import CollectionIndexItemContainer from './collection/collection_container'
+import { Express } from 'express';
 
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
-  App.use(express.static('frontend/build'));
+  App.use(Express.static('frontend/build'));
   App.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   })
