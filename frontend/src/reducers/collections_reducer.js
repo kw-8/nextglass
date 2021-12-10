@@ -8,7 +8,6 @@ const CollectionsReducer = (state = {}, action) => {
       return action.collections.data;
     case RECEIVE_COLLECTION:
       console.log(action); 
-      debugger
       nextState[action.collections.data.collection["_id"]] = action.collections.data.collection;
       // nextState[action.collections.data.suggestions]
       return nextState;

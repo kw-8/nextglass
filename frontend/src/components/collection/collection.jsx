@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 class Collection extends React.Component {
 
   componentDidMount() {
-    debugger
     this.props.getCollection(this.props.match.params.collectionId);
   }
 

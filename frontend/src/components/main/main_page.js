@@ -5,7 +5,6 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.getCollections()
-    // debugger
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,8 +20,6 @@ class MainPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const coll = Object.assign({}, this.state, {user: this.props.currentUser.id}, {wines: []})
-    
-    // debugger
     this.props.createCollection(coll)
   }
 
