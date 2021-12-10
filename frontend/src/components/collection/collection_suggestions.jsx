@@ -30,7 +30,9 @@ class SuggestedWines extends React.Component {
                   ))
                 }
               </div>
-              <button id={suggestion._id} className="wine-index-add-button" onClick={e => this.handleSubmit(e)}>Add to Collection</button>
+              <button id={suggestion._id} className="wine-index-add-button" onClick={e => this.handleSubmit(e)}>
+                Add to Collection
+              </button>
             </div>
           ))
         }
