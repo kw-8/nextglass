@@ -14,7 +14,7 @@ class Collection extends React.Component {
       <div>
         <button onClick={() => console.log(this.props)}>Console log props</button>
         <CollectionWines collection={this.props.collection}/>
-        <SuggestedWines suggestions={this.props.suggestion}/>
+        <SuggestedWines updateCollection={this.props.updateCollection} currentCollection={this.props.collection[this.props.collection.length - 1]} suggestions={this.props.suggestion}/>
       </div>
       
     )
