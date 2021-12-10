@@ -3,8 +3,6 @@ import { getCollection, updateCollection, deleteCollection } from '../../actions
 import Collection from './collection';
 
 const mSTP = (state, ownProps) => {
-    console.log(state)
-
   return {
     suggestion: Object.values(state.suggestions),
     collection: Object.values(state.collections)

@@ -10,6 +10,7 @@
   padding-right: 20px;
   background-color: white;
   border-bottom: 1px solid lightgrey;
+  z-index: 5;
 }
 
 .nav-bar * {
