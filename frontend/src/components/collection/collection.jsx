@@ -9,7 +9,10 @@ class Collection extends React.Component {
 
   render() {
     return(
-      <div></div>
+      <div>
+        <button onClick={() => console.log(this.props)}>Console log props</button>
+      </div>
+      // <SuggestedWines/>
     )
   }
 }

@@ -6,7 +6,8 @@ const mSTP = (state, ownProps) => {
     console.log(state)
 
   return {
-    collection: Object.values(state.collections),
+    suggestion: Object.values(state.suggestions),
+    collection: Object.values(state.collections)
     // suggestions: Object.values(state.suggestions)
   }
 }
