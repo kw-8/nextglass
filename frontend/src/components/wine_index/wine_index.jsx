@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation, useParams } from 'react-router';
 import WineIndexItem from './wine_index_item'
 
 class WineIndex extends React.Component {
