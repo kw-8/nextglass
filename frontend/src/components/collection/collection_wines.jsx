@@ -2,6 +2,7 @@ import React from "react";
 import { fetchOneWine } from "../../actions/wine_actions";
 import { getCollection } from "../../actions/collection_actions";
 
+
 class CollectionWines extends React.Component {
 
   componentDidMount() {
