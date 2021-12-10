@@ -48,13 +48,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 #user-collections > div > a {
+  height: inherit;
+  width: inherit;
+  border-radius: inherit;
+  overflow: hidden;
+}
+#user-collections p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   text-decoration: none;
-  text-shadow: 0 0 3px black;
+  text-shadow: 0 0 6px black;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
+}
+#user-collections img {
+  width: 120%;
+  height: auto;
 }
 
 h2 {

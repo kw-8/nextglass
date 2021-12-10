@@ -22,8 +22,9 @@ class MainPage extends React.Component {
     const coll = Object.assign({}, this.state, {user: this.props.currentUser.id}, {wines: []})
     this.props.createCollection(coll)
   }
-
+  
   render() {
+    let icons = ['/rose.png', '/white_wine_2.png', '/public/four_bottles.jpg']
     return (
       <div className="main-page-contaner">
         <div className="home-page-header">
@@ -36,9 +37,12 @@ class MainPage extends React.Component {
           <h2>Your Collections</h2>
           <div id='user-collections'>
             {
-              this.props.collections.map(collection =>
+              this.props.collections.map((collection, i) =>
                 <div>
-                  <Link to={`/collections/${collection._id}`}>{collection.title}</Link>
+                  <Link to={`/collections/${collection._id}`}>
+                    <img src={icons[i%3]}></img>
+                    <p>{collection.title}</p>
+                  </Link>
                 </div>
               )
             }
