@@ -16,7 +16,6 @@ class WineIndexItem extends React.Component {
 
   render() {
     const collectionsArray = Object.values(this.props.usersCollections)
-    console.log(collectionsArray)
     return (
       <div className="wine-index-item-container">
         <div className="wine-image"></div>
