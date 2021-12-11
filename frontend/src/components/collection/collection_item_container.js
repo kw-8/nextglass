@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
   // debugger
   return {
     collectionId: ownProps.match.params.collectionId,
-    collections: state.collections
+    collections: state.collections,
+    wines: state.wines
   }
 }
 

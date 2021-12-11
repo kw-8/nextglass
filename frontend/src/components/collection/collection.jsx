@@ -10,7 +10,7 @@ class Collection extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     return(
       <div>
         <CollectionWines 

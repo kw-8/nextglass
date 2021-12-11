@@ -3,6 +3,7 @@ import React from "react";
 class CollectionItem extends React.Component {
 
   componentDidMount() {
+    debugger
     let { collectionId, collections } = this.props;
     if (collections.length === 0) this.props.getCollection(collectionId)
 
@@ -10,22 +11,27 @@ class CollectionItem extends React.Component {
       console.log(collections)
       const wineId = collections[collectionId].wines[0];
       this.props.fetchOneWine(wineId)
+    } else {
+      debugger;
+      this.props.getCollection(collectionId)
     }
     // console.log(wine);
     // console.log(wine1);
   }
 
-render() {
-  debugger
-  if (this.props.collections[this.props.collectionId]) return null;
-  return (
-    <div className="collection-wines-container">
-      {
-      this.props.collections[0].wines
-      }
-    </div>
-  )
-}
+  render() {
+    let { collections, wines, collectionId } = this.props;
+    debugger
+    if (!collections[collectionId] || !wines[collectionId]) return null;
+    debugger
+    return (
+      <div className="collection-wines-container">
+        {
+          collections[collectionId].wines
+        }
+      </div>
+    )
+  }
 
 }
 
