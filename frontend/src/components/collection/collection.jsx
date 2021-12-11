@@ -10,13 +10,18 @@ class Collection extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <div>
         <CollectionWines 
-          collection={this.props.collection} 
+          collectionId={this.props.collectionId}
+          collections={this.props.collections} 
           getCollection={this.props.getCollection} 
           fetchOneWine={this.props.fetchOneWine}/>
-        <SuggestedWines updateCollection={this.props.updateCollection} currentCollection={this.props.collection[this.props.collection.length - 1]} suggestions={this.props.suggestion}/>
+        <SuggestedWines
+          updateCollection={this.props.updateCollection}
+          currentCollection={this.props.collections[this.props.collections.length - 1]}
+          suggestions={this.props.suggestion}/>
       </div>
       
     )

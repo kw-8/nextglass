@@ -5,7 +5,10 @@ const CollectionsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_COLLECTIONS:
-      return action.collections.data;
+      action.collections.data.forEach(collection => {
+        nextState[collection._id] = collection
+      });
+      return nextState;
     case RECEIVE_COLLECTION:
       return Object.assign({}, { collection: action.collection.data.collection });
     case REMOVE_COLLECTION:

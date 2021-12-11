@@ -5,9 +5,9 @@ import Collection from './collection';
 
 const mSTP = (state, ownProps) => {
   return {
-    collectionId: ownProps.match.params.collectionId,
+    // collectionId: ownProps.match.params.collectionId,
     suggestion: Object.values(state.suggestions),
-    collection: Object.values(state.collections)
+    collections: Object.values(state.collections)
     // suggestions: Object.values(state.suggestions)
   }
 }
