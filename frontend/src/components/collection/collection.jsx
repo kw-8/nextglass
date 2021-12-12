@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import SuggestedWines from './collection_suggestions';
-import CollectionWines from './collection_item';
+import CollectionItemContainer from './collection_item_container'
 
 class Collection extends React.Component {
 
@@ -13,11 +13,7 @@ class Collection extends React.Component {
     // debugger
     return(
       <div>
-        <CollectionWines 
-          collectionId={this.props.collectionId}
-          collections={this.props.collections} 
-          getCollection={this.props.getCollection} 
-          fetchOneWine={this.props.fetchOneWine}/>
+        <CollectionItemContainer collectionId={this.props.match.params.collectionId}/>
         <SuggestedWines
           updateCollection={this.props.updateCollection}
           currentCollection={this.props.collections[this.props.collections.length - 1]}

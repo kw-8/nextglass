@@ -5,11 +5,11 @@ import CollectionItem from './collection_item';
 
 const mSTP = (state, ownProps) => {
   // debugger
-  return {
-    collectionId: ownProps.match.params.collectionId,
+  return ({
+    collectionId: ownProps.collectionId,
     collections: state.collections,
     wines: state.wines
-  }
+  })
 }
 
 const mDTP = dispatch => ({
