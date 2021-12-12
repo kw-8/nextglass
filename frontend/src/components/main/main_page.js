@@ -47,7 +47,6 @@ class MainPage extends React.Component {
               )
             }
           </div>
-          <Link to="/collections">view your collections</Link>
           <h2>Create a new collection</h2>
           <form id="collection-form">
             <label htmlFor='title'></label>

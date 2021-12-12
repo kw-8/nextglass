@@ -7,7 +7,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Splash from './splash/splash';
 import WineIndexContainer from './wine_index/wine_index_container'
-import CollectionItemContainer from './collection/collection_item_container'
+import CollectionContainer from './collection/collection_container'
 
 const App = () => (
   <div>
@@ -15,7 +15,7 @@ const App = () => (
     <Switch>
         <Route path="/welcome" component={Splash} />
         <ProtectedRoute exact path="/wines" component={WineIndexContainer} />
-        <ProtectedRoute exact path="/collections/:collectionId" component={CollectionItemContainer} />
+        <ProtectedRoute exact path="/collections/:collectionId" component={CollectionContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/" component={MainPageContainer} />
