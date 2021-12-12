@@ -4,22 +4,39 @@ class CollectionItem extends React.Component {
 
   componentDidMount() {
     let { collectionId, collections } = this.props;
-    if (collections.length === 0) this.props.getCollection(collectionId)
-
-    if (collections[collectionId]) { 
-      console.log(collections)
-      const wineId = collections[collectionId].wines[0];
-      this.props.fetchOneWine(wineId)
+    debugger
+    if (collections[collectionId]) {
+      debugger
+      // console.log('found the collection', collections)
+      collections[collectionId].wines.forEach(wineId => {
+        console.log(wineId)
+        this.props.fetchOneWine(wineId)
+      })
+      // const wineId = collections[collectionId].wines[0];
+      
     } else {
+      debugger
       this.props.getCollection(collectionId)
+      // this.setState((state, props) => ({'wines': null}))
     }
     // console.log(wine);
     // console.log(wine1);
   }
 
+  // componentDidUpdate() {
+  //   let { collectionId, collections } = this.props;
+  //   debugger
+  //   collections[collectionId].wines.forEach(wineId => {
+  //     console.log(wineId)
+  //     this.props.fetchOneWine(wineId)
+  //   })
+  // }
+
   render() {
     let { collections, wines, collectionId } = this.props;
+    debugger
     if (!collections[collectionId] || !wines[collectionId]) return null;
+    debugger
     return (
       <div className="collection-wines-container">
         {

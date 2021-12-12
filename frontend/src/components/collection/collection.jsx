@@ -13,7 +13,7 @@ class Collection extends React.Component {
     // debugger
     return(
       <div>
-        <CollectionItemContainer collectionId={this.props.match.params.collectionId}/>
+        <CollectionItemContainer key={this.props.match.params.collectionId} collectionId={this.props.match.params.collectionId}/>
         <SuggestedWines
           updateCollection={this.props.updateCollection}
           currentCollection={this.props.collections[this.props.collections.length - 1]}

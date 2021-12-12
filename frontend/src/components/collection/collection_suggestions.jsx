@@ -28,7 +28,7 @@ class SuggestedWines extends React.Component {
                 <div className="suggested-wine-tag-container">
                   {
                     suggestion.tags.map(tag => (
-                      <div className="sugested-wine-tag">{tag}</div>
+                      <div key={tag} className="suggested-wine-tag">{tag}</div>
                     ))
                   }
                 </div>
