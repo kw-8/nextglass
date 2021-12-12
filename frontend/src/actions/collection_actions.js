@@ -9,9 +9,10 @@ export const receiveCollections = collections => ({
   collections
 })
 
-export const receiveCollection = collection => ({
+export const receiveCollection = (collection, collectionId) => ({
   type: RECEIVE_COLLECTION,
-  collection
+  collection,
+  collectionId
 })
 
 export const removeCollection = collectionId => ({
@@ -26,7 +27,7 @@ export const getCollections = () => dispatch => (
 
 export const getCollection = collectionId => dispatch => (
   APIUtil.getCollection(collectionId)
-    .then(collection => dispatch(receiveCollection(collection)))
+    .then(collection => dispatch(receiveCollection(collection, collectionId)))
 )
 
 export const createCollection = collection => dispatch => (
