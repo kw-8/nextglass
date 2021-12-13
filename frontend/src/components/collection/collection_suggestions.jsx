@@ -20,7 +20,7 @@ class SuggestedWines extends React.Component {
       <div className="suggested-wines-container">
         {
           this.props.suggestions.length && this.props.suggestions[0].map(suggestion => (
-            <div className="suggested-wine">
+            <div className="suggested-wine" key={suggestion._id}>
               <div className="wine-img"><img src={icons[Math.floor(Math.random()*3) % 3]}></img></div>
               <div className="wine-text">
                 <h3 className="suggested-wine-title">{suggestion.title}</h3>
