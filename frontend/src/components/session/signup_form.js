@@ -42,6 +42,17 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history); 
   }
 
+  demoUser(e) {
+    e.preventDefault();
+
+    let user = {
+      email: "NextGlassDemo@email.com",
+      password: "abc123"
+    };
+
+    this.props.login(user); 
+  }
+
   renderErrors() {
     return(
       <ul>
@@ -87,6 +98,7 @@ class SignupForm extends React.Component {
                 />
               <br/>
               <input type="submit" value="Submit" />
+              <button className="session-button" onClick={e => this.demoUser(e)}>Demo User</button>
               {this.renderErrors()}
             </div>
           </form>

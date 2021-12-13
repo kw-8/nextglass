@@ -41,6 +41,17 @@ class LoginForm extends React.Component {
     this.props.login(user); 
   }
 
+  demoUser(e) {
+    e.preventDefault();
+
+    let user = {
+      email: "NextGlassDemo@email.com",
+      password: "abc123"
+    };
+
+    this.props.login(user); 
+  }
+
   // Render the session errors if there are any
   renderErrors() {
     return(
@@ -74,6 +85,7 @@ class LoginForm extends React.Component {
                 />
               <br/>
               <input type="submit" value="Submit" />
+              <button className="session-button" onClick={e => this.demoUser(e)}>Demo User</button>
               {this.renderErrors()}
             </div>
           </form>
