@@ -16,7 +16,13 @@ class CollectionItem extends React.Component {
       
     } else {
       debugger
-      this.props.getCollection(collectionId)
+      this.props.getCollection(collectionId).then(res => {
+        // console.log(res.collection.data.collection.wines, collectionId, this.props)
+        res.collection.data.collection.wines.forEach(wineId => {
+          console.log(wineId)
+          this.props.fetchOneWine(wineId)
+        })
+      })
       // this.setState((state, props) => ({'wines': null}))
     }
     // console.log(wine);
