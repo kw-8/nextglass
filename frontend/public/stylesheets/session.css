@@ -70,6 +70,26 @@
   cursor: pointer;
 }
 
+.session-button {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+  margin-top: 30px;
+  color: black;
+  padding: 10px;
+  width: 300px;
+  background-color: rgba(245, 180, 180, 0.467);
+  border-color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all .4s ease;
+  box-shadow: 4px 4px 12px black;
+}
+
+.session-button:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
 .session-form h3 {
   font-family: 'Tenor Sans', sans-serif;
   font-size: 36px;
