@@ -7,7 +7,6 @@ class CollectionItem extends React.Component {
     // debugger
     if (collections[collectionId]) {
       collections[collectionId].wines.forEach(wineId => {
-        console.log(wineId)
         this.props.fetchOneWine(wineId)
       })
       
@@ -16,7 +15,7 @@ class CollectionItem extends React.Component {
       this.props.getCollection(collectionId).then(res => {
         // console.log(res.collection.data.collection.wines, collectionId, this.props)
         res.collection.data.collection.wines.forEach(wineId => {
-          console.log(wineId)
+          // console.log(wineId)
           this.props.fetchOneWine(wineId)
         })
       })
