@@ -117,8 +117,8 @@ body {
 #user-collections {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
-  width: 90vw;
+  justify-content: center;
+  width: calc(100vw - 30px);
 }
 
 #user-collections > div {
@@ -127,9 +127,7 @@ body {
   width: 200px;
   background-color: tomato;
 
-  margin: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px;
   border-radius: 6px;
 
   display: flex;
