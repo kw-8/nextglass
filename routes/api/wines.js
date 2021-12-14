@@ -11,6 +11,15 @@ router.get("/", (req, res) => {
     .catch(err => res.status(400).json(err))
 });
 
+// get wines by tag
+router.get(`/tags/:tagName`, (req, res) => {
+  // debugger
+  Wine
+    .find({ tags: req.params.tagName })
+      .then(wines => res.json(wines))
+      .catch(err => res.status(400).json(err))
+});
+
 // get wine by id
 router.get("/:id", (req, res) => {
   Wine

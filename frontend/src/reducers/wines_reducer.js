@@ -1,4 +1,8 @@
-import { RECEIVE_ALL_WINES, RECEIVE_ONE_WINE} from '../actions/wine_actions'
+import {
+  RECEIVE_ALL_WINES,
+  RECEIVE_ONE_WINE,
+  RECEIVE_TAG_WINES
+} from '../actions/wine_actions'
 
 
 const WinesReducer = (state = {}, action) => {
@@ -10,6 +14,8 @@ const WinesReducer = (state = {}, action) => {
     case RECEIVE_ONE_WINE:
       nextState[action.wine.data._id] = action.wine.data;
       return nextState;
+    case RECEIVE_TAG_WINES:
+      return Object.assign({}, action.wines.data)
     default:
       return state;
   }
