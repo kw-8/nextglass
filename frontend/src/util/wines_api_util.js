@@ -7,3 +7,7 @@ export const fetchAllWines = () => (
 export const fetchOneWine = wineId => (
   axios.get(`/api/wines/${wineId}`)
 )
+
+export const fetchTagWines = tagName => (
+  axios.get(`/api/wines/tags/${tagName}`)
+)
