@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class CollectionItem extends React.Component {
 
@@ -35,7 +36,7 @@ class CollectionItem extends React.Component {
               <div className="wine-tags-container">
                 {
                 wines[wine].tags.map(tag => (
-                  <div className="wine-tag">{tag} </div>
+                  <Link to={`/wines/tags/${tag}`} className="wine-tag">{tag} </Link>
                 ))
                 }
               </div>

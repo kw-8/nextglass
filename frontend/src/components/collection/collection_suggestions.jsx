@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class SuggestedWines extends React.Component {
   constructor(props){
@@ -29,7 +30,7 @@ class SuggestedWines extends React.Component {
                 <div className="suggested-wine-tag-container">
                   {
                     suggestion.tags.map(tag => (
-                      <div key={tag} className="suggested-wine-tag">{tag} </div>
+                      <Link key={tag} to={`/wines/tags/${tag}`} className="wine-tag">{tag}</Link>
                     ))
                   }
                 </div>

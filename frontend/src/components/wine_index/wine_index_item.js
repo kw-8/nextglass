@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class WineIndexItem extends React.Component {
   constructor(props){
@@ -25,7 +26,7 @@ class WineIndexItem extends React.Component {
           <div className="wine-tag-container">
             {
               this.props.tags.map(tag => (
-                <div className="wine-tag">{tag}</div>
+                <Link className="wine-tag" to={{pathname: `/wines/tags/${tag}`, state: {wines: []}}}>{tag}</Link>
               ))
             }
           </div>
