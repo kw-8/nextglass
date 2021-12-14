@@ -37,6 +37,7 @@ class MainPage extends React.Component {
   
   render() {
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
+    let curated = ['fruity', 'dry', 'bright', 'complex', 'smooth', 'chewy', 'green', 'spicy']
     return (
       <div className="main-page-contaner">
         <div className="home-page-header">
@@ -44,7 +45,20 @@ class MainPage extends React.Component {
             <h1>Find your next glass...</h1>
 
         <div className="home-collections-container">
-          <Link className='home-index-link' to="/wines">View Our Curated Wine List</Link>
+          {/* <Link className='home-index-link' to="/wines">View Our Curated Wine List</Link> */}
+          <h2>Explore Categories</h2>
+          <div className='curated-tag-container'>
+            {
+              curated.map(tag =>
+                <div className='curated-tag'>
+                  <Link to={`/wines/tags/${tag}`}>
+                    <img src="/four_bottles.jpg" alt={tag} />
+                    <p>{tag}</p>
+                  </Link>
+                </div>
+              )
+            }
+          </div>
           <h2>Your Collections</h2>
           <div id='user-collections'>
             <div className='add-new-collection' onClick={() => this.displayForm()}>Add New Collection</div>

@@ -31,12 +31,46 @@
   text-decoration: none;
 }
 
+.curated-tag-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+.curated-tag, .curated-tag > a {
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+  min-width: 300px;
+  width: 300px;
+  min-height: 180px;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+.curated-tag p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 0 6px black;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+.curated-tag img {
+  max-width: 400px;
+  height: auto;
+}
+
 .home-collections-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90vw;
+  width: 100vw;
   background-color: rgb(255, 255, 255);
+  margin-top: 30vh;
 }
 
 .add-new-collection:hover {
@@ -113,7 +147,7 @@
 }
 
 h2 {
-  margin-top: 10px;
+  margin-top: 50px;
   font-family: 'Sacramento';
   font-size: 48px;
   justify-self: center;
