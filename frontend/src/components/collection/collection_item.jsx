@@ -4,18 +4,14 @@ class CollectionItem extends React.Component {
 
   componentDidMount() {
     let { collectionId, collections } = this.props;
-    // debugger
     if (collections[collectionId]) {
       collections[collectionId].wines.forEach(wineId => {
         this.props.fetchOneWine(wineId)
       })
       
     } else {
-      // debugger
       this.props.getCollection(collectionId).then(res => {
-        // console.log(res.collection.data.collection.wines, collectionId, this.props)
         res.collection.data.collection.wines.forEach(wineId => {
-          // console.log(wineId)
           this.props.fetchOneWine(wineId)
         })
       })
@@ -23,14 +19,28 @@ class CollectionItem extends React.Component {
   }
 
   render() {
+
     let { collections, wines, collectionId } = this.props;
-    // debugger
-    if (!collections[collectionId] || !wines[collectionId]) return null;
-    // debugger
+    // if (!collections[collectionId] || !wines[collectionId]) return null;
+    if (!collections[collectionId] || wines.length === 0) return null;
+
     return (
       <div className="collection-wines-container">
+        <h2 className="collection-wines-title">Wines in Your Collection</h2>
         {
-          collections[collectionId].wines
+          Object.keys(wines).map(wine => (
+            <div className="wine-details" key={wine.id}>
+              <h3 className="wine-title">{wines[wine].title}</h3>
+              <p className="wine-description">{wines[wine].description}</p>
+              <div className="wine-tags-container">
+                {
+                wines[wine].tags.map(tag => (
+                  <div className="wine-tag">{tag} </div>
+                ))
+                }
+              </div>
+            </div>
+          ))
         }
       </div>
     )
