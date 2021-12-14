@@ -61,10 +61,11 @@ class MainPage extends React.Component {
           </div>
           <h2>Your Collections</h2>
           <div id='user-collections'>
-            <div className='add-new-collection' onClick={() => this.displayForm()}>Add New Collection</div>
+            <div className='add-new-collection' onClick={() => this.displayForm()}>Add New Collection
+            </div>
             {
               this.props.collections.map((collection, i) =>
-                <div key={collection._id}>
+                <div className='home-collection-item' key={collection._id}>
                   <Link to={`/collections/${collection._id}`}>
                     <img src={icons[i%3]}></img>
                     <p>{collection.title}</p>
@@ -87,6 +88,7 @@ class MainPage extends React.Component {
           </form>
           </div>
         </div>
+        <Link className='home-index-link' to="/wines">View Our Curated Wine List</Link>
           </div>
         </div>
       </div>
