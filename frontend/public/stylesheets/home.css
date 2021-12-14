@@ -1,3 +1,4 @@
+/*Background image and transparent overlay styling*/
 .home-page-header {
   background-image: url("../home-page-wine-shelf.jpg");
   background-repeat: no-repeat;
@@ -17,6 +18,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .home-page-header-overlay > h1 {
   font-family: 'Tenor Sans', sans-serif;
   font-size: 80px;
@@ -25,24 +27,60 @@
   line-height: normal;
 }
 
+/*Link to the Index page*/
 .home-index-link {
   font-family: 'Tenor Sans', sans-serif;
   font-size: 40px;
   text-decoration: none;
 }
 
+/*Collections container styling*/
 .home-collections-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  max-height: 600px;
   width: 90vw;
+  margin-top: 45px;
+  padding-bottom: 55px;
   background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+}
+
+.home-collections-header {
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.849);
+  border: 5px solid white;
+  border-radius: 25px;
+  position: relative;
+  top: -55px;
+  text-decoration: underline dotted black 3px;
+}
+
+.home-collection-item{
+  transition: all .1s ease-in-out;
+}
+
+.home-collection-item:hover{
+  box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.467);
+}
+
+.add-new-collection {
+  transition: all .1s ease-in-out;
+  height: 300px;
+  width: 300px;
+  min-height: 300px;
+  min-width: 300px;
 }
 
 .add-new-collection:hover {
   cursor: pointer;
+  box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.467);
 }
 
+/*New Collection form styling*/
 .collection-form-container {
   display: flex;
   flex-direction: column;
@@ -73,11 +111,11 @@
 }
 
 #user-collections {
-  margin-left: 60px;
-  margin-right: 60px;
   display: flex;
-  flex-flow: row wrap;
-  justify-items: center;
+  flex-direction: row;
+  overflow-x: scroll;
+  max-width: 1200px;
+  max-height: 600px;
 }
 
 #user-collections > div {
@@ -121,7 +159,6 @@ h2 {
   font-family: 'Sacramento';
   font-size: 48px;
   justify-self: center;
-  text-decoration: underline dotted pink;
 }
 
 #collection-form {
