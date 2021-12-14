@@ -116,19 +116,20 @@ body {
 
 #user-collections {
   display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  max-width: 1200px;
-  max-height: 600px;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 90vw;
 }
 
 #user-collections > div {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  min-width: 200px;
+  width: 200px;
   background-color: tomato;
 
-  margin: 10px;
-  margin-top: 0;
+  margin: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 6px;
 
   display: flex;

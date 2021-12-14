@@ -19,10 +19,9 @@ class CollectionItem extends React.Component {
   }
 
   render() {
-
     let { collections, wines, collectionId } = this.props;
     // if (!collections[collectionId] || !wines[collectionId]) return null;
-    if (!collections[collectionId] || wines.length === 0) return null;
+    if (!collections[collectionId] || wines.length === 0) return (<img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/be585d49104437.58ab53277e681.gif"></img>);
 
     return (
       <div className="collection-wines-container">
