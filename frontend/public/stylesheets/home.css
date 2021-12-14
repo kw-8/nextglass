@@ -1,3 +1,7 @@
+body {
+  overflow-x: clip;
+}
+
 .home-page-header {
   background-image: url("../home-page-wine-shelf.jpg");
   background-repeat: no-repeat;
@@ -55,13 +59,16 @@
   transform: translate(-50%, -50%);
   color: white;
   text-decoration: none;
-  text-shadow: 0 0 6px black;
+  text-shadow:  0 0 1px black,
+                0 0 2px black,
+                0 0 5px black;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
 }
 .curated-tag img {
-  max-width: 400px;
-  height: auto;
+  min-height: inherit;
+  min-width: inherit;
+  object-fit: contain;
 }
 
 .home-collections-container {
@@ -129,6 +136,7 @@
   width: inherit;
   border-radius: inherit;
   overflow: hidden;
+  position: relative;
 }
 #user-collections p {
   position: absolute;
@@ -137,13 +145,19 @@
   transform: translate(-50%, -50%);
   color: white;
   text-decoration: none;
-  text-shadow: 0 0 6px black;
+  text-shadow:  0 0 1px black,
+                0 0 2px black,
+                0 0 5px black;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 #user-collections img {
-  width: 120%;
-  height: auto;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 120%;
+  object-fit: scale-down;
+  position: absolute;
 }
 
 h2 {
