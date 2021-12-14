@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 400px;
+  height: calc(100vh - 50px);
 }
 .home-page-header-overlay {
   height: inherit;
@@ -24,8 +24,47 @@
   line-height: normal;
 }
 
-.home-page-index-link {
-  background-color: rgb(250, 250, 250);
+.home-index-link {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.home-collections-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  background-color: rgb(255, 255, 255);
+}
+
+.add-new-collection:hover {
+  cursor: pointer;
+}
+
+.collection-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.76);
+}
+
+.close-form {
+  font-size: 25px;
+  align-self: flex-end;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: white;
+}
+
+.close-form:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 #user-collections {
@@ -73,22 +112,20 @@
 }
 
 h2 {
-  margin-top: 20px;
-  margin-left: 60px;
+  margin-top: 10px;
   font-family: 'Sacramento';
-  font-size: 28px;
+  font-size: 48px;
+  justify-self: center;
 }
 
 #collection-form {
-  max-width: 400px;
-  margin-left: 70px;
-  margin-bottom: 26px;
-  padding: 20px;
-  box-sizing: border-box;
-  border: 1px solid lightgray;
-
   display: flex;
   flex-direction: column;
+  min-width: 400px;
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+  margin: 3vh 3vw;
+  padding: 3vh 3vw;
 
   background-color: white;
 }
@@ -105,6 +142,9 @@ button {
   background-color: #e05a5a;
   border: 1px solid rgb(224, 86, 86);
   color: white;
+}
+button:hover {
+  cursor: pointer;
 }
 input, textarea, button {
   border-radius: 3px;
