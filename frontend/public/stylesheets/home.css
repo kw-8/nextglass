@@ -120,6 +120,7 @@ h2 {
   font-family: 'Sacramento';
   font-size: 48px;
   justify-self: center;
+  text-decoration: underline dotted pink;
 }
 
 #collection-form {
