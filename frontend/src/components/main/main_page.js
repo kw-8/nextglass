@@ -50,7 +50,7 @@ class MainPage extends React.Component {
             <div className='add-new-collection' onClick={() => this.displayForm()}>Add New Collection</div>
             {
               this.props.collections.map((collection, i) =>
-                <div>
+                <div key={collection._id}>
                   <Link to={`/collections/${collection._id}`}>
                     <img src={icons[i%3]}></img>
                     <p>{collection.title}</p>
