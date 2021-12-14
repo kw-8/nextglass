@@ -18,6 +18,7 @@ class SuggestedWines extends React.Component {
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
     return (
       <div className="suggested-wines-container">
+        <h2 className="suggestions-title">Suggestions</h2>
         {
           this.props.suggestions.length && this.props.suggestions[0].map(suggestion => (
             <div className="suggested-wine" key={suggestion._id}>
@@ -28,7 +29,7 @@ class SuggestedWines extends React.Component {
                 <div className="suggested-wine-tag-container">
                   {
                     suggestion.tags.map(tag => (
-                      <div key={tag} className="suggested-wine-tag">{tag}</div>
+                      <div key={tag} className="suggested-wine-tag">{tag} </div>
                     ))
                   }
                 </div>

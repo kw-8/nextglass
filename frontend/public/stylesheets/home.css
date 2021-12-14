@@ -3,7 +3,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: calc(100vh - 50px);
+  background-attachment: fixed;
+  height: calc(100vh - 51px);
 }
 .home-page-header-overlay {
   height: inherit;

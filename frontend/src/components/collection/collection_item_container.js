@@ -4,7 +4,6 @@ import { fetchOneWine } from '../../actions/wine_actions';
 import CollectionItem from './collection_item';
 
 const mSTP = (state, ownProps) => {
-  // debugger
   return ({
     collectionId: ownProps.collectionId,
     collections: state.collections,
