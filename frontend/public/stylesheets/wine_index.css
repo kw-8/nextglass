@@ -73,7 +73,11 @@
 }
 
 .wine-tag {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  color: white;
   margin-right: 5px;
+  text-decoration: none;
 }
 
 .collection-adder {

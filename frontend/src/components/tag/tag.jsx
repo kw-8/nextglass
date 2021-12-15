@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class TagIndex extends React.Component {
   constructor(props) {
@@ -9,6 +10,13 @@ class TagIndex extends React.Component {
   componentDidMount() {
     let { tagName, fetchTagWines } = this.props;
     fetchTagWines(tagName)
+  }
+
+  // If a link tag is used to navigate from the current tags page, this will force the reload
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.tagName !== this.props.match.params.tagName) {
+      window.location.reload();
+    }
   }
 
   handleSubmit(e) {
@@ -37,9 +45,9 @@ class TagIndex extends React.Component {
                 <div className="tag-wine-tags-container">
                   {
                     wine.tags.map(tag =>
-                      <div key={tag} className="tag-wine-tag">
+                      <Link key={tag} to={`/wines/tags/${tag}`} className="tag-wine-tag">
                         {tag}
-                      </div>
+                      </Link>
                     )
                   }
                 </div>
