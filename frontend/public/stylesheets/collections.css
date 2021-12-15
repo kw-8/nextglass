@@ -28,10 +28,12 @@
   overflow: hidden;
 }
 .wine-img img {
-  max-height: 200%;
-  max-width: 200%;
-  margin-left: auto;
-  margin-right: auto;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 240px;
+  max-width: 240px;
+  object-fit: scale-down;
+  position: absolute;
   /* width: 120px; */
 }
 .wine-text {
@@ -41,6 +43,13 @@
 .suggested-wine-title {
   font-family: 'Tenor Sans';
   font-size: 24px;
+}
+.suggested-wine button.wine-index-add-button {
+  background-color: rgb(245, 180, 180);
+  width: 100px;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
 }
 .suggested-wine-tag-container {
   display: flex;
