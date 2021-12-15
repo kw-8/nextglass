@@ -28,13 +28,13 @@ class CollectionItem extends React.Component {
       <div className="collection-wines-container">
         <h2 className="collection-wines-title">Wines in Your Collection</h2>
         {
-          Object.keys(wines).map(wine => (
+          wines.map(wine => (
             <div className="wine-details" key={wine.id}>
-              <h3 className="wine-title">{wines[wine].title}</h3>
-              <p className="wine-description">{wines[wine].description}</p>
+              <h3 className="wine-title">{wine.title}</h3>
+              <p className="wine-description">{wine.description}</p>
               <div className="wine-tags-container">
                 {
-                wines[wine].tags.map(tag => (
+                wine.tags.map(tag => (
                   <Link to={`/wines/tags/${tag}`} className="wine-tag">{tag} </Link>
                 ))
                 }

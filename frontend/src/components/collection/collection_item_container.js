@@ -4,10 +4,12 @@ import { fetchOneWine } from '../../actions/wine_actions';
 import CollectionItem from './collection_item';
 
 const mSTP = (state, ownProps) => {
+  let collectionId = ownProps.collectionId
+  let wines = state.collections[collectionId] ? Object.values(state.wines).filter(wine => state.collections[collectionId].wines.includes(wine._id)) : []
   return ({
-    collectionId: ownProps.collectionId,
+    collectionId,
     collections: state.collections,
-    wines: state.wines
+    wines
   })
 }
 
