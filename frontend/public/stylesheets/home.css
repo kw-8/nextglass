@@ -1,4 +1,7 @@
-/*Background image and transparent overlay styling*/
+body {
+  overflow-x: clip;
+}
+
 .home-page-header {
   background-image: url("../home-page-wine-shelf.jpg");
   background-repeat: no-repeat;
@@ -34,45 +37,49 @@
   text-decoration: none;
 }
 
-/*Collections container styling*/
+.curated-tag-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+.curated-tag, .curated-tag > a {
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+  min-width: 300px;
+  width: 300px;
+  min-height: 180px;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+.curated-tag p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-decoration: none;
+  text-shadow:  0 0 1px black,
+                0 0 2px black,
+                0 0 5px black;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+.curated-tag img {
+  min-height: inherit;
+  min-width: inherit;
+  object-fit: contain;
+}
+
 .home-collections-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: nowrap;
-  max-width: 1200px;
-  max-height: 600px;
-  width: 90vw;
-  margin-top: 45px;
-  padding-bottom: 55px;
+  width: 100vw;
   background-color: rgb(255, 255, 255);
-  border-radius: 25px;
-}
-
-.home-collections-header {
-  margin: 0;
-  background-color: rgba(255, 255, 255, 0.849);
-  border: 5px solid white;
-  border-radius: 25px;
-  position: relative;
-  top: -55px;
-  text-decoration: underline dotted black 3px;
-}
-
-.home-collection-item{
-  transition: all .1s ease-in-out;
-}
-
-.home-collection-item:hover{
-  box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.467);
-}
-
-.add-new-collection {
-  transition: all .1s ease-in-out;
-  height: 300px;
-  width: 300px;
-  min-height: 300px;
-  min-width: 300px;
+  margin-top: 30vh;
 }
 
 .add-new-collection:hover {
@@ -86,10 +93,7 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 50px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 20%;
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.76);
 }
@@ -137,6 +141,7 @@
   width: inherit;
   border-radius: inherit;
   overflow: hidden;
+  position: relative;
 }
 #user-collections p {
   position: absolute;
@@ -145,17 +150,23 @@
   transform: translate(-50%, -50%);
   color: white;
   text-decoration: none;
-  text-shadow: 0 0 6px black;
+  text-shadow:  0 0 1px black,
+                0 0 2px black,
+                0 0 5px black;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 #user-collections img {
-  width: 120%;
-  height: auto;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 120%;
+  object-fit: scale-down;
+  position: absolute;
 }
 
 h2 {
-  margin-top: 10px;
+  margin-top: 50px;
   font-family: 'Sacramento';
   font-size: 48px;
   justify-self: center;
