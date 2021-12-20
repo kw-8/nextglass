@@ -16,7 +16,7 @@ Rather than trying out new drinks and asking all of your friends for recommendat
 ### Bonus Features
 - Search
 - Wine: create
-- Suggestions: with tensorflow
+- Future: with tensorflow
 
 ## Technologies and Technical Challenges
 ### Backend: MongoDB and Express
@@ -25,14 +25,22 @@ Rather than trying out new drinks and asking all of your friends for recommendat
 - Tables: users, collections, wines
 
 Technical Challenges:
-- Fetching data efficiently to feed into the recommendation model
-- Cleaning and maintaining a sizeable dataset
+- Fetching data efficiently. We leveraged mongodb search index to enable fuzzy searching.
+- Cleaning data. We used excel to:
+  -  Remove all incomplete entries
+  -  Create a list of common tags from the content of the descriptions
+  -  Remove entries without the most common tags
+  -  Trim down the 130k dataset to 10k
+- Manipulating data
+  -  Original data on [kaggle](https://www.kaggle.com/zynicide/wine-reviews)
+  -  split.js contains the final code we used to change the tags and tagindex data from strings to arrays
+  -  **X** contains the final code we used to update the description data to use UTF-8 characters
 
-### Frontend: React, Redux, Axios, Tensorflow Library
+### Frontend: React, Redux, Axios
 - Landing page contains images linked to curated collections
 
 Technical Challenges:
-- Smoothly add any particular wine to one or more of a user's collections
+- Double fetching- fetching a collection, and then dependent wines. Final solution using thenable promises, as componentDidUpdate will be deprecated.
 - Creating a recommendation model for suggesting drinks based on tags from the current collection
 - Reading data from the MongoDB database to feed into the recommendation model
 
@@ -53,16 +61,20 @@ Katherine Wu, Malachi Coberley, David Chan
 - Discuss how to implement curated collections - ***All***
 
 ### Day 3
-- Work on implementing curated collections on landing page - ***David, Malachi***
-- Hammer out bugs in day 2's model, pitch in where needed - ***Katherine***
-- Meet to discuss what needs to be done and plan the next few days - ***All***
+- Wine index component - ***Malachi***
+- Change wine tags data type - ***Katherine, David***
 
 ### Day 4
-- Wine component, user's collections component
+- Wine component - ***David***
+- User's collections component - ***Malachi***
+- Tags query and component - ***Katherine***
 
 ### Day 5
+- Suggestions component - ***Malachi***
+- Collection's wines component - ***David***
+- Mongoose query and index for fuzzy search - ***Katherine***
 
 ### Day 6
 - Complete production README - ***Katherine***
-- Final adjustments to design/CSS
-- Finish texting and debugging - ***All***
+- Search component, about and credits components - ***Malachi***
+- Delete wines; refactor collections - ***David***
