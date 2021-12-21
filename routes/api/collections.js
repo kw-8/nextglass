@@ -31,6 +31,10 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
           wine.tagIndex.forEach(tagId =>
             tags[tagId] = tags[tagId] ? tags[tagId] + 1 : 1
           )
+          if (wine.price < min_price) min_price = wine.price
+          if (wine.price > max_price) max_price = wine.price
+          if (wine.points < min_points) min_points = wine.points
+          if (wine.points > max_points) max_points = wine.points
         })
       });
       let entries = Object.entries(tags)
@@ -38,24 +42,25 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
       while (sortedTags.length < 4) {
         sortedTags.push(Math.floor(Math.random() * 56) + 1)
       }
-      min_price ? min_price : 0
-      max_price ? max_price : 10000
-      min_points ? min_points : 0
-      max_points ? max_points : 100
+      min_price = min_price ? min_price : 0
+      max_price = max_price ? max_price : 10000
+      min_points = min_points ? min_points : 0
+      max_points = max_points ? max_points : 100
 
       let primary_tag = sortedTags.slice(0, 1)
       let other_tags = sortedTags.slice(1, 4)
-      // min_price *= 0.6
-      // max_price *= 1.8
+      min_price *= 0.6
+      max_price *= 1.8
 
+      console.log(min_price, max_price)
       return Wine.find({
         _id: { $nin: wines },
         tagIndex: { $elemMatch: { $in: primary_tag } },
         tagIndex: { $elemMatch: { $in: other_tags } },
-        // price: { $gte: min_price },
-        // price: { $lte: max_price },
-        // points: { $gte: 1 },
-        // points: { $lte: 100 }
+        price: { $gte: min_price },
+        price: { $lte: max_price },
+        points: { $gte: min_points },
+        points: { $lte: max_points }
       }).limit(10)
         .then(suggestions => (res.json({ collection, suggestions })))
         .catch(err => res.status(400).json(err))  

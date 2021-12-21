@@ -37,7 +37,7 @@ router.get("/search/:keyword", (req, res) => {
           "index": "test",
           "text": {
             "path": "description",
-            "query": "dry",
+            "query": req.params.keyword,
             "fuzzy": {}
           }
         }
