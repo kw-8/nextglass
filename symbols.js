@@ -12,7 +12,8 @@ mongoose
 const chars = {
   "‚Äî": "—",
   "‚Äì": "-",
-  "‚Äú ": '&',
+  "‚Äú": '"',
+  "‚Äù": '"',
   '√Å': 'Á',
   '√Ç': 'Â',
   '√Ä': 'À',
@@ -58,7 +59,7 @@ const chars = {
   '√Ω': 'ý'
 };
 
-const convert = str => ( str.replace(/(√\S)|(,\W\W)/g, exp => chars[exp]) )
+const convert = str => (str.replace(/(√\W)|(,\S\S)/g, exp => chars[exp]))
 
 Wine.find()
   .then(wines => {
