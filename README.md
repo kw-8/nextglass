@@ -1,5 +1,5 @@
 # NextGlass
-## NextGlass
+## [NextGlass](http://nextglass.herokuapp.com/#/welcome)
 NextGlass is a web application that uses your preferences in wine to suggest new wines to taste.
 
 ## Background and Overview
