@@ -4,22 +4,24 @@ import SuggestedWines from './collection_suggestions';
 import CollectionItemContainer from './collection_item_container'
 
 class Collection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDeleteCollection = this.handleDeleteCollection.bind(this);
+  }
 
   componentDidMount() {
     this.props.getCollection(this.props.match.params.collectionId);
   }
 
-  render() {
-    //Creates an array of all wines in the current collection
+  handleDeleteCollection(e) {
+    e.preventDefault();
+    this.props.deleteCollection(this.props.match.params.collectionId);
+  }
 
-    // let wineArray = []
-    // for (let i = 0; i < this.props.collections.length; i++) {
-    //   if (this.props.collections[i]._id === this.props.match.params.collectionId) {
-    //     wineArray = [...this.props.collections[i].wines]
-    //   }
-    // }
+  render() {
     return(
       <div>
+        <button className="delete-collection-btn" onClick={this.handleDeleteCollection}>Delete Collection</button>
         <CollectionItemContainer 
           key={this.props.match.params.collectionId} 
           collectionId={this.props.match.params.collectionId}
