@@ -15,43 +15,68 @@
   width: inherit;
 }
 
-.suggested-wine {
-  min-height: 200px;
+.collection-wines-container > h2, .suggested-wines-container > h2 {
+  border-bottom: 1px solid lightgray;
+}
+.suggested-wine, .collection-wine {
+  height: 160px;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid lightgray;
 }
-.wine-img {
-  min-width: 120px;
-  max-width: 120px;
-  height: 100%;
+.collection-wine-img, .suggested-wine-img {
+  align-items: center;
+  min-width: 160px;
+  max-width: 160px;
+  height: 160px;
   overflow: hidden;
 }
-.wine-img img {
-  min-height: 200px;
-  min-width: 200px;
-  max-height: 240px;
-  max-width: 240px;
+.collection-wine-img img, .suggested-wine-img img {
+  height: 160px;
   object-fit: scale-down;
-  position: absolute;
-  /* width: 120px; */
 }
-.wine-text {
+.collection-wine-title, .suggested-wine-title {
+  font-family: 'Tenor Sans';
+  /* font-size: 16px; */
+}
+.collection-wine-text, .collection-wine-details, .suggested-wine-text {
   padding: 10px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 }
-.suggested-wine-title {
-  font-family: 'Tenor Sans';
-  font-size: 24px;
+.collection-wine-description, .suggested-wine-description {
+  overflow-y: scroll;
+  flex-grow: 1;
+}
+.collection-wine-tag, .suggested-wine-tag {
+  font-size: 14px;
+  margin-top: 6px;
+  margin-right: 12px;
+  padding: 6px;
+  border-radius: 2px;
+  background-color: rgb(245, 180, 180);
+  
+  font-family: 'Tenor Sans', sans-serif;
+  color: black;
+  text-decoration: none;
+}
+.suggested-wine-tag-container, .collection-wine-tag-container {
+  display: flex;
+  flex-direction: row;
 }
 .suggested-wine button.wine-index-add-button {
   background-color: rgb(245, 180, 180);
-  width: 100px;
+  min-width: 160px;
+  max-width: 160px;
   margin: 0;
   border-radius: 0;
   border: 0;
-}
-.suggested-wine-tag-container {
-  display: flex;
-  flex-direction: row;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }

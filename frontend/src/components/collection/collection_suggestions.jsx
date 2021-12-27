@@ -23,14 +23,14 @@ class SuggestedWines extends React.Component {
         {
           this.props.suggestions.length && this.props.suggestions[0].map(suggestion => (
             <div className="suggested-wine" key={suggestion._id}>
-              <div className="wine-img"><img src={icons[Math.floor(Math.random()*3) % 3]}></img></div>
-              <div className="wine-text">
+              <div className="suggested-wine-img"><img src={icons[Math.floor(Math.random()*3) % 3]}></img></div>
+              <div className="suggested-wine-text">
                 <h3 className="suggested-wine-title">{suggestion.title}</h3>
                 <p className="suggested-wine-description">{suggestion.description}</p>
                 <div className="suggested-wine-tag-container">
                   {
                     suggestion.tags.map(tag => (
-                      <Link key={tag} to={`/wines/tags/${tag}`} className="wine-tag">{tag}</Link>
+                      <Link key={tag} to={`/wines/tags/${tag}`} className="suggested-wine-tag">{tag}</Link>
                     ))
                   }
                 </div>
