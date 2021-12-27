@@ -35,7 +35,7 @@
   height: 160px;
   object-fit: scale-down;
 }
-.suggested-wine-title {
+.collection-wine-title, .suggested-wine-title {
   font-family: 'Tenor Sans';
   /* font-size: 16px; */
 }
@@ -55,8 +55,8 @@
 }
 .collection-wine-tag, .suggested-wine-tag {
   font-size: 14px;
-  margin: 6px;
-  margin-bottom: 0px;
+  margin-top: 6px;
+  margin-right: 12px;
   padding: 6px;
   border-radius: 2px;
   background-color: rgb(245, 180, 180);
@@ -76,5 +76,7 @@
   margin: 0;
   border-radius: 0;
   border: 0;
-  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
