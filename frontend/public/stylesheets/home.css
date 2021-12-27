@@ -165,9 +165,10 @@ body {
 }
 
 h2 {
-  margin-top: 50px;
+  margin-top: 36px;
+  margin-left: 18px;
   font-family: 'Sacramento';
-  font-size: 48px;
+  font-size: 36px;
   justify-self: center;
 }
 

@@ -10,14 +10,6 @@ class Collection extends React.Component {
   }
 
   render() {
-    //Creates an array of all wines in the current collection
-
-    // let wineArray = []
-    // for (let i = 0; i < this.props.collections.length; i++) {
-    //   if (this.props.collections[i]._id === this.props.match.params.collectionId) {
-    //     wineArray = [...this.props.collections[i].wines]
-    //   }
-    // }
     return(
       <div>
         <CollectionItemContainer 
