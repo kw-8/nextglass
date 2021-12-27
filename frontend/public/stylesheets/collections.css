@@ -34,7 +34,7 @@
   max-width: 160px;
   height: 160px;
   overflow: hidden;
-  background-color: whitesmoke;
+  background-color: rgb(245, 227, 227);
 }
 .collection-wine-img img,
 .suggested-wine-img img,
@@ -86,7 +86,8 @@
   flex-direction: row;
 }
 .suggested-wine button.wine-index-add-button,
-.tag-wines .add-to-collection {
+.tag-wines .add-to-collection,
+.choose-collection {
   background-color: rgb(245, 180, 180);
   min-width: 160px;
   max-width: 160px;
@@ -96,4 +97,31 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
+}
+
+.choose-collection {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 14px;
+}
+.choose-collection label {
+  text-align: center;
+}
+.choose-collection select {
+  font-family: "Tenor Sans";
+  background-color: rgb(245, 227, 227);
+  margin: 6px;
+}
+.tag-add-button {
+  width: 130px;
+  background-color: rgb(235, 112, 112);
+  border: none;
+}
+.tag-add-button:hover {
+  background-color: rgb(224, 86, 86);
 }
