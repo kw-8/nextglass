@@ -15,7 +15,7 @@
   width: inherit;
 }
 
-.suggested-wine {
+.suggested-wine, .collection-wine {
   min-height: 200px;
   display: flex;
   flex-direction: row;
@@ -39,6 +39,17 @@
 .wine-text {
   padding: 10px;
   box-sizing: border-box;
+}
+.collection-wine-tag {
+  font-size: 14px;
+  margin: 6px;
+  padding: 6px;
+  border-radius: 2px;
+  background-color: rgb(245, 180, 180);
+  
+  font-family: 'Tenor Sans', sans-serif;
+  color: black;
+  text-decoration: none;
 }
 .suggested-wine-title {
   font-family: 'Tenor Sans';

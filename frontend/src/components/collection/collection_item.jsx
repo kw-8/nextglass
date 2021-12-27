@@ -24,20 +24,25 @@ class CollectionItem extends React.Component {
     // if (!collections[collectionId] || !wines[collectionId]) return null;
     if (!collections[collectionId] || wines.length === 0) return (<img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/be585d49104437.58ab53277e681.gif"></img>);
 
+    let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
+
     return (
       <div className="collection-wines-container">
         <h2 className="collection-wines-title">Wines in Your Collection</h2>
         {
           wines.map(wine => (
-            <div className="wine-details" key={wine.id}>
-              <h3 className="wine-title">{wine.title}</h3>
-              <p className="wine-description">{wine.description}</p>
-              <div className="wine-tags-container">
-                {
-                wine.tags.map(tag => (
-                  <Link to={`/wines/tags/${tag}`} className="wine-tag">{tag} </Link>
-                ))
-                }
+            <div className="collection-wine">
+              <div className="wine-img"><img src={icons[Math.floor(Math.random() * 3) % 3]}></img></div>
+              <div className="wine-details" key={wine.id}>
+                <h3 className="wine-title">{wine.title}</h3>
+                <p className="wine-description">{wine.description}</p>
+                <div className="wine-tags-container">
+                  {
+                  wine.tags.map(tag => (
+                    <Link to={`/wines/tags/${tag}`} className="collection-wine-tag">{tag} </Link>
+                  ))
+                  }
+                </div>
               </div>
             </div>
           ))
