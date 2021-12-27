@@ -32,11 +32,11 @@ class CollectionItem extends React.Component {
         {
           wines.map(wine => (
             <div className="collection-wine">
-              <div className="wine-img"><img src={icons[Math.floor(Math.random() * 3) % 3]}></img></div>
-              <div className="wine-details" key={wine.id}>
-                <h3 className="wine-title">{wine.title}</h3>
-                <p className="wine-description">{wine.description}</p>
-                <div className="wine-tags-container">
+              <div className="collection-wine-img"><img src={icons[Math.floor(Math.random() * 3) % 3]}></img></div>
+              <div className="collection-wine-details" key={wine.id}>
+                <h3 className="collection-wine-title">{wine.title}</h3>
+                <p className="collection-wine-description">{wine.description}</p>
+                <div className="collection-wine-tag-container">
                   {
                   wine.tags.map(tag => (
                     <Link to={`/wines/tags/${tag}`} className="collection-wine-tag">{tag} </Link>
