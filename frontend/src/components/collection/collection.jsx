@@ -13,11 +13,14 @@ class Collection extends React.Component {
     this.props.getCollection(this.props.match.params.collectionId);
   }
 
+<<<<<<< HEAD
   handleDeleteCollection(e) {
     e.preventDefault();
     this.props.deleteCollection(this.props.match.params.collectionId);
   }
 
+=======
+>>>>>>> 40bc774b2a9274ccc09ba7bd854e16e015aa2d9f
   render() {
     return(
       <div>
