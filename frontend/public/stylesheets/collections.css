@@ -46,16 +46,22 @@
 .suggested-wine-title,
 .tag-wine-title {
   font-family: 'Tenor Sans';
+  min-height: 2em;
+  overflow: scroll;
 }
 .collection-wine-text,
 .collection-wine-details,
 .suggested-wine-text,
 .tag-wine-text {
-  padding: 10px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+
+  padding: 10px;
+  box-sizing: border-box;
   height: 160px;
+  min-width: calc(100vw - 320px);
+  max-width: calc(100vw - 320px);
+  
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
@@ -83,7 +89,7 @@
 .suggested-wine-tag-container,
 .tag-wine-tag-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
 }
 .suggested-wine button.wine-index-add-button,
 .tag-wines .add-to-collection,
