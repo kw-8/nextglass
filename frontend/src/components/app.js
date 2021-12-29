@@ -9,12 +9,14 @@ import Splash from './splash/splash';
 import WineIndexContainer from './wine_index/wine_index_container'
 import CollectionContainer from './collection/collection_container'
 import TagContainer from './tag/tag_container';
+import AboutUs from './about/about';
 
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
         <Route path="/welcome" component={Splash} />
+        <Route path="/about" component={AboutUs} />
         <Route exact path="/wines/tags/:tagName" component={TagContainer} />
         <ProtectedRoute exact path="/wines" component={WineIndexContainer} />
         <ProtectedRoute exact path="/collections/:collectionId" component={CollectionContainer} />
