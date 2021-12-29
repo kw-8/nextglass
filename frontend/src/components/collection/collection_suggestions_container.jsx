@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { getCollection, updateCollection } from '../../actions/collection_actions';
 import CollectionSuggestions from './collection_suggestions'
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
   console.log('col sug state:', state)
   return {
     suggestions: Object.values(state.suggestions),
