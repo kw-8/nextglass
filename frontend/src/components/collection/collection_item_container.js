@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
-import { getCollection } from '../../actions/collection_actions';
+import {
+  getCollection,
+  updateCollection
+} from '../../actions/collection_actions';
 import { fetchOneWine } from '../../actions/wine_actions';
 import CollectionItem from './collection_item';
 
@@ -15,6 +18,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
   getCollection: collectionId => dispatch(getCollection(collectionId)),
+  updateCollection: collection => dispatch(updateCollection(collection)),
   fetchOneWine: wineId => dispatch(fetchOneWine(wineId))
 })
 
