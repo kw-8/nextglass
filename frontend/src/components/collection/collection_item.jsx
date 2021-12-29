@@ -19,9 +19,20 @@ class CollectionItem extends React.Component {
     }
   }
 
+  handleSubmit(e) {
+    const removeButton = e.currentTarget;
+    removeButton.disabled = true
+
+    let { collectionId, collections } = this.props;
+    const updatedCollection = Object.assign({}, collections[collectionId])
+    
+    updatedCollection.wines.filter(el => el !== removeButton.id)
+    this.props.updateCollection(updatedCollection)
+  }
+
   render() {
     let { collections, wines, collectionId } = this.props;
-    // if (!collections[collectionId] || !wines[collectionId]) return null;
+    
     if (!collections[collectionId] || wines.length === 0) return (<img className="loading-gif" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/be585d49104437.58ab53277e681.gif"></img>);
 
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
@@ -44,6 +55,9 @@ class CollectionItem extends React.Component {
                   }
                 </div>
               </div>
+              <button id={wine._id} className="wine-index-remove-button" onClick={e => this.handleSubmit(e)}>
+                Remove from Collection
+              </button>
             </div>
           ))
         }

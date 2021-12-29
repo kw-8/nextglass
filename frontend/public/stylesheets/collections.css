@@ -92,10 +92,12 @@
   display: flex;
   flex-flow: row wrap;
 }
+.collection-wine button.wine-index-remove-button,
 .suggested-wine button.wine-index-add-button,
 .tag-wines .add-to-collection,
 .choose-collection {
   background-color: rgb(245, 180, 180);
+  color: black;
   min-width: 160px;
   max-width: 160px;
   margin: 0;
@@ -103,7 +105,7 @@
   border: 0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .choose-collection {
