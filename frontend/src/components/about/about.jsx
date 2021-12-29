@@ -33,9 +33,23 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <h1>What is NextGlass?</h1>
-      <p>NextGLass is a wine discovery application that takes the guesswork out of finding your new favorite wine. Create collections of your favorite wines, and we'll use those to recommend other wines we think you will like.</p>
-      <blockquote>"NextGlass is the next killer app. Wow what great service, I love it! NextGlass is the real deal! I can't say enough about NextGlass." - Alexa P. testimonial-generator.com</blockquote>
+      <div className='info-container'>
+        <h1>What is NextGlass?</h1>
+        <p>NextGLass is a wine discovery application that takes the guesswork out of finding your new favorite wine. Create collections of your favorite wines, and we'll use those to recommend other wines we think you will like.</p>
+        <p>NextGlass is built using:</p>
+        <ul>
+          <li>Mongo</li>
+          <li>Express</li>
+          <li>React</li>
+          <li>Redux</li>
+          <li>Node</li>
+        </ul>
+
+        <h1>Testimonials</h1>
+        <blockquote>"NextGlass is the next killer app. Wow what great service, I love it! I can't say enough about NextGlass." - Alexa P. testimonial-generator.com</blockquote>
+        <blockquote>"Not able to tell you how happy I am with NextGlass." - Mohamed L. testimonial-generator.com</blockquote>
+        <blockquote>"Just what I was looking for. I love your system. We can't understand how we've been living without NextGlass." - Jackquelin O. testimonial-generator.com</blockquote>
+        </div>
     </div>
   )
 }
