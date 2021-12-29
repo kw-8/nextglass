@@ -70,6 +70,7 @@
 .tag-wine-description {
   overflow-y: scroll;
   flex-grow: 1;
+  font-size: 14px;
 }
 .collection-wine-tag,
 .suggested-wine-tag,
