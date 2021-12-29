@@ -74,7 +74,7 @@
 .collection-wine-tag,
 .suggested-wine-tag,
 .tag-wine-tag {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 6px;
   margin-right: 12px;
   padding: 6px;
@@ -102,7 +102,7 @@
   border: 0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .choose-collection {
@@ -113,7 +113,7 @@
   
   box-sizing: border-box;
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .choose-collection label {
   text-align: center;
