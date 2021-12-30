@@ -26,7 +26,7 @@ class CollectionItem extends React.Component {
     let { collectionId, collections } = this.props;
     const updatedCollection = Object.assign({}, collections[collectionId])
     
-    updatedCollection.wines.filter(el => el !== removeButton.id)
+    updatedCollection.wines = updatedCollection.wines.filter(el => el !== removeButton.id)
     this.props.updateCollection(updatedCollection)
   }
 
