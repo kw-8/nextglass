@@ -14,7 +14,6 @@ class SuggestedWines extends React.Component {
 
     const { collectionId, collections } = this.props
     const updatedCollection = Object.assign({}, collections[collectionId])
-    debugger
     updatedCollection.wines.push(addButton.id)
     this.props.updateCollection(updatedCollection)
   }
