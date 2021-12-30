@@ -11,7 +11,10 @@ class SuggestedWines extends React.Component {
   handleSubmit(e) {
     const addButton = e.currentTarget;
     addButton.disabled = true
-    const updatedCollection = Object.assign({}, this.props.currentCollection)
+
+    const { collectionId, collections } = this.props
+    const updatedCollection = Object.assign({}, collections[collectionId])
+    debugger
     updatedCollection.wines.push(addButton.id)
     this.props.updateCollection(updatedCollection)
   }

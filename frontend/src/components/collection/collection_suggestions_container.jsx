@@ -3,10 +3,11 @@ import { getCollection, updateCollection } from '../../actions/collection_action
 import CollectionSuggestions from './collection_suggestions'
 
 const mSTP = (state, ownProps) => {
-  console.log('col sug state:', state)
+  console.log('col sug state:', state, ownProps)
   return {
+    collectionId: ownProps.collectionId,
     suggestions: Object.values(state.suggestions),
-    collections: Object.values(state.collections)
+    collections: state.collections
   }
 }
 
