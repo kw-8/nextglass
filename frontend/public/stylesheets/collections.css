@@ -134,3 +134,8 @@
 .tag-add-button:hover {
   background-color: rgb(224, 86, 86);
 }
+
+.delete-collection-btn {
+  position: fixed;
+  right: 0px;
+}

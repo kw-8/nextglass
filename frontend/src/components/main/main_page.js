@@ -39,7 +39,7 @@ class MainPage extends React.Component {
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
     let curated = ['fruity', 'dry', 'bright', 'complex', 'smooth', 'chewy', 'green', 'spicy']
     console.log(this.props.collections)
-    debugger
+    // debugger
     return (
       <div className="main-page-contaner">
         <div className="home-page-header">
