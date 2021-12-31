@@ -30,6 +30,14 @@ class CollectionItem extends React.Component {
     this.props.updateCollection(updatedCollection)
   }
 
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    // console.log(this.props, prevProps)
+    if (this.props.wines.length !== prevProps.wines.length) {
+      this.props.getCollection(this.props.collectionId);
+    }
+  }
+
   render() {
     let { collections, wines, collectionId } = this.props;
     

@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { getCollection } from './actions/collection_actions';
+import { getCollection, updatCollection } from './actions/collection_actions';
 import { fetchTagWines } from './actions/wine_actions'
 import * as WineUtil from './util/wines_api_util'
 
