@@ -20,7 +20,7 @@ class MainPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const coll = Object.assign({}, this.state, {user: this.props.currentUser.id}, {wines: []})
-    this.props.createCollection(coll)
+    this.props.createCollection(coll).then(this.props.getCollections())
   }
 
   displayForm() {
@@ -38,6 +38,8 @@ class MainPage extends React.Component {
   render() {
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
     let curated = ['fruity', 'dry', 'bright', 'complex', 'smooth', 'chewy', 'green', 'spicy']
+    console.log(this.props.collections)
+    debugger
     return (
       <div className="main-page-contaner">
         <div className="home-page-header">
@@ -64,7 +66,9 @@ class MainPage extends React.Component {
             <div className='add-new-collection' onClick={() => this.displayForm()}>Add New Collection
             </div>
             {
-              this.props.collections.map((collection, i) =>
+              this.props.collections
+              .filter(el => el !== undefined)
+              .map((collection, i) =>
                 <div className='home-collection-item' key={collection._id}>
                   <Link to={`/collections/${collection._id}`}>
                     <img src={icons[i%3]}></img>
