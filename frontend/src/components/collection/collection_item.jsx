@@ -41,7 +41,7 @@ class CollectionItem extends React.Component {
   render() {
     let { collections, wines, collectionId } = this.props;
     
-    if (!collections[collectionId] || wines.length === 0) return (<img className="loading-gif" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/be585d49104437.58ab53277e681.gif"></img>);
+    if (!collections[collectionId] || wines.length === 0) return (<div className="collection-wines-container">Add a wine to this collection!</div>);
 
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
 

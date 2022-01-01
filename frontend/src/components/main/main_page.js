@@ -92,7 +92,7 @@ class MainPage extends React.Component {
           </form>
           </div>
         </div>
-        <Link className='home-index-link' to="/wines">View Our Curated Wine List</Link>
+            <Link className='home-index-link' to="/wines"><h2>View All Wines</h2></Link>
           </div>
         </div>
       </div>
