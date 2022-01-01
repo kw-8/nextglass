@@ -41,7 +41,13 @@ class CollectionItem extends React.Component {
   render() {
     let { collections, wines, collectionId } = this.props;
     
-    if (!collections[collectionId] || wines.length === 0) return (<div className="collection-wines-container">Add a wine to this collection!</div>);
+    if (!collections[collectionId] || wines.length === 0) return (
+      <>
+        <h2 className="collection-wines-title">Wines in Your Collection</h2>
+        <div className="message">
+          Add a wine to this collection!
+        </div>
+      </>);
 
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
 

@@ -139,3 +139,15 @@
   position: fixed;
   right: 0px;
 }
+
+
+
+.message {
+  position: relative;
+  padding: 60px;
+  border-top: 1px solid lightgray;
+
+  font-family: "Montserrat";
+  font-weight: 300;
+  color: black;
+}
