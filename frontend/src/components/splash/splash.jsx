@@ -9,9 +9,11 @@ class Splash extends React.Component {
         <div className="splash-header-hero">
           <div className="splash-header-hero-overlay">
             <div className="splash-header-content">
-              <h1>YOUR NEXT<span>GLASS</span> IS ON US</h1>
+              <div className='splash-header-hero-text'>
+                <h1>FIND YOUR NEXT<span>GLASS</span></h1>
+                <p>Recommendations based on your current favorites!</p>
+              </div>
               <div className="splash-body">
-              <p>Rather than trying out new drinks and asking all of your friends for recommendations, why not quickly receive recommendations based on your current preferences?</p>
               <Link className="splash-login-button" to="/login">Login</Link>
               <Link className="splash-signup-button" to="/signup">Sign up</Link>
               </div>

@@ -45,7 +45,8 @@ class CollectionItem extends React.Component {
       <>
         <h2 className="collection-wines-title">Wines in Your Collection</h2>
         <div className="message">
-          Add a wine to this collection!
+          <p>Add a wine to this collection!</p>
+          <p>Recommendations tailored to collection based on tags, points, and price.</p>
         </div>
       </>);
 
