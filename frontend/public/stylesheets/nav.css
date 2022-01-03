@@ -24,12 +24,12 @@
 }
 
 .logo {
-  font-family: 'Sacramento';
-  text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white;
+  font-family: 'Quicksand';
+  /* text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 2px white; */
   position: relative;
-  top: 16px;
+  /* top: 16px; */
   font-weight: 500;
-  font-size: 50px;
+  font-size: 30px;
   color: black;
 }
 
