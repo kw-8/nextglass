@@ -24,9 +24,11 @@ body {
 
 .home-page-header-overlay > h1 {
   font-family: 'Tenor Sans', sans-serif;
-  font-size: 80px;
+  font-size: 50px;
   color: white;
   margin: 30px;
+  margin-top: calc(30px + 10vw);
+  margin-bottom: 0;
   line-height: normal;
 }
 

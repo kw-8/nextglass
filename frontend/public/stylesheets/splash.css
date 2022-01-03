@@ -54,37 +54,35 @@
   margin-top: 0;
   min-width: 100px;
   max-width: 160px;
-  mix-blend-mode: screen
+  mix-blend-mode: screen;
+  font-family: 'Quicksand';
+  font-weight: 600;
+  font-size: 24px;
+  color: black;
 }
 
 .splash-login-button {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 24px;
-  color: black;
   padding: 10px;
   width: 200px;
-  background-color: rgb(255, 255, 255, 0.6);
+  background-color: rgb(255, 255, 255, 0.8);
   text-decoration: none;
   border-radius: 25px;
   transition: all .4s ease;
 }
 
 .splash-signup-button {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 24px;
-  color: black;
   padding: 10px;
   width: 200px;
-  background-color: rgb(245, 180, 180, 0.6);
+  background-color: rgb(245, 180, 180, 0.8);
   text-decoration: none;
   border-radius: 25px;
   transition: all .4s ease;
 }
 
 .splash-signup-button:hover {
-  background-color: rgb(245, 180, 180);
+  background-color: rgb(245, 180, 180, 1.6);
 }
 
 .splash-login-button:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255, 1.6);
 }
