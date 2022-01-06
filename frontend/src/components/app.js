@@ -10,6 +10,7 @@ import WineIndexContainer from './wine_index/wine_index_container'
 import CollectionContainer from './collection/collection_container'
 import TagContainer from './tag/tag_container';
 import AboutUs from './about/about';
+import SearchResultsContainer from './search/search_results_container';
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
         <Route path="/welcome" component={Splash} />
         <Route path="/about" component={AboutUs} />
         <Route exact path="/wines/tags/:tagName" component={TagContainer} />
+        <ProtectedRoute exact path="/search/:keyword" component={SearchResultsContainer} />
         <ProtectedRoute exact path="/wines" component={WineIndexContainer} />
         <ProtectedRoute exact path="/collections/:collectionId" component={CollectionContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />

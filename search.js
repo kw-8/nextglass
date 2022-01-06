@@ -14,7 +14,7 @@ Wine
         "index": "test",
         "text": {
           "path": "description",
-          "query": "dry",
+          "query": "loo",
           "fuzzy": {}
         }
       }

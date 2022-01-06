@@ -42,8 +42,10 @@ export const fetchTagWines = tagName => dispatch => (
   .catch(err => console.log(err))
 )
 
-export const searchForWine = query => dispatch => (
+export const searchForWine = query => dispatch => {
+  return (
   APIUtil.searchForWine(query)
+  // .then(wines => console.log(wines))
   .then(wines => dispatch(receiveSearchedWines(wines)))
   .catch(err => console.log(err))
-)
+)}
