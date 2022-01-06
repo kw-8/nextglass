@@ -10,7 +10,8 @@ const CollectionsReducer = (state = {}, action) => {
       });
       return nextState;
     case RECEIVE_COLLECTION:
-      nextState[action.collection.data.collection._id] = action.collection.data.collection;
+      // debugger
+      nextState[action.collectionId] = action.collection.data.collection;
       return nextState;
     case REMOVE_COLLECTION:
       delete nextState[action.collectionId];

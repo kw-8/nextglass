@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
 
 // get wines by tag
 router.get(`/tags/:tagName`, (req, res) => {
-  // debugger
   Wine
     .find({ tags: req.params.tagName })
       .then(wines => res.json(wines))

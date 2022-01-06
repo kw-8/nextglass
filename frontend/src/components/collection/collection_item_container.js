@@ -11,6 +11,7 @@ const mSTP = (state, ownProps) => {
   let wines = state.collections[collectionId] ? Object.values(state.wines).filter(wine => state.collections[collectionId].wines.includes(wine._id)) : []
   return ({
     collectionId,
+    currentCollection: state.collections[collectionId],
     collections: state.collections,
     wines
   })

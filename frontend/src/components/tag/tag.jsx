@@ -23,7 +23,6 @@ class TagIndex extends React.Component {
 
   handleSubmit(wine_id) {
     let selectedCollection = document.getElementById(wine_id)
-    debugger
     const updatedCollection = Object.assign({}, this.props.usersCollections[selectedCollection.value])
     updatedCollection.wines.push(wine_id)
     this.props.updateCollection(updatedCollection)

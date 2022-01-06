@@ -24,17 +24,20 @@ body {
 
 .home-page-header-overlay > h1 {
   font-family: 'Tenor Sans', sans-serif;
-  font-size: 80px;
+  font-size: 50px;
   color: white;
   margin: 30px;
+  margin-top: calc(30px + 10vw);
+  margin-bottom: 0;
   line-height: normal;
 }
 
 /*Link to the Index page*/
 .home-index-link {
+  padding: 40px;
+  padding-bottom: 10px;
   font-family: 'Tenor Sans', sans-serif;
-  font-size: 40px;
-  text-decoration: none;
+  text-decoration-color: tomato;
 }
 
 .curated-tag-container {
@@ -166,7 +169,7 @@ body {
 
 h2 {
   margin-top: 36px;
-  margin-left: 18px;
+  /* margin-left: 18px; */
   font-family: 'Sacramento';
   font-size: 36px;
   justify-self: center;

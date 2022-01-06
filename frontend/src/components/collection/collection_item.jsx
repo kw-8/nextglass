@@ -26,14 +26,29 @@ class CollectionItem extends React.Component {
     let { collectionId, collections } = this.props;
     const updatedCollection = Object.assign({}, collections[collectionId])
     
-    updatedCollection.wines.filter(el => el !== removeButton.id)
+    updatedCollection.wines = updatedCollection.wines.filter(el => el !== removeButton.id)
     this.props.updateCollection(updatedCollection)
+  }
+
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    // console.log(this.props, prevProps)
+    if (this.props.wines.length !== prevProps.wines.length) {
+      this.props.getCollection(this.props.collectionId);
+    }
   }
 
   render() {
     let { collections, wines, collectionId } = this.props;
     
-    if (!collections[collectionId] || wines.length === 0) return (<img className="loading-gif" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/be585d49104437.58ab53277e681.gif"></img>);
+    if (!collections[collectionId] || wines.length === 0) return (
+      <>
+        <h2 className="collection-wines-title">Wines in Your Collection</h2>
+        <div className="message">
+          <p>Add a wine to this collection!</p>
+          <p>Recommendations are tailored to the collection based on tags, points, and price.</p>
+        </div>
+      </>);
 
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
 

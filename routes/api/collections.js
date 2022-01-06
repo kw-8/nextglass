@@ -52,7 +52,7 @@ router.get("/:id", passport.authenticate("jwt", { session: false }), (req, res) 
       min_price *= 0.6
       max_price *= 1.8
 
-      console.log(min_price, max_price)
+      // console.log(min_price, max_price)
       return Wine.find({
         _id: { $nin: wines },
         tagIndex: { $elemMatch: { $in: primary_tag } },
@@ -81,7 +81,10 @@ router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
   });
   newCollection
     .save()
-    .then(collection => res.json(collection))
+    .then(collection => {
+      // console.log(collection)
+      return res.json(collection)
+    })
 });
 
 // update collection
@@ -100,6 +103,7 @@ router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) 
         collection.description = req.body.description,
         collection.wines = req.body.wines
         collection.save()
+        return res.json(collection)
       }
     })
 });

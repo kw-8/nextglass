@@ -35,10 +35,11 @@ export const createCollection = collection => dispatch => (
     .then(collection => dispatch(receiveCollection(collection)))
 )
 
-export const updateCollection = collection => dispatch => (
+export const updateCollection = collection => dispatch => {
+  return (
   APIUtil.updateCollection(collection)
-    .then(collection => dispatch(receiveCollection(collection)))
-)
+    .then(collection => dispatch(receiveCollection(collection, collection._id)))
+)}
 
 export const deleteCollection = collectionId => dispatch => (
   APIUtil.deleteCollection(collectionId)
