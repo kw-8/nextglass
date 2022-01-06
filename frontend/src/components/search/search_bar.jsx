@@ -7,7 +7,7 @@ export function SearchBar() {
     e.preventDefault();
 
     let searchTerm = document.getElementById('search-bar')
-    history.push(`/search/${searchTerm.value}`)
+    history.push(`/search/${searchTerm.value}`, {wines: []})
     searchTerm.value = ""
   }
 
