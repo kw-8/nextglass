@@ -47,7 +47,10 @@ class TagIndex extends React.Component {
                 <div className="tag-wine-tags-container">
                   {
                     wine.tags.map(tag =>
-                      <Link key={tag} to={`/wines/tags/${tag}`} className="tag-wine-tag">
+                      this.props.match.params.tagName === tag ?
+                      <Link key={tag} to={`/wines/tags/${tag}`} className="matching-tag">
+                        {tag}
+                      </Link> : <Link key={tag} to={`/wines/tags/${tag}`} className="tag-wine-tag">
                         {tag}
                       </Link>
                     )

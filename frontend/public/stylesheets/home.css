@@ -187,6 +187,10 @@ h2 {
   background-color: white;
 }
 
+#main-search-bar {
+  width: 500px;
+}
+
 input, textarea {
   resize: none;
   font-family: 'Roboto';
