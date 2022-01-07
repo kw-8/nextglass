@@ -46,7 +46,7 @@ class MainPage extends React.Component {
         <div className="home-page-header">
           <div className="home-page-header-overlay">
             <h1>Find your next glass...</h1>
-            <SearchBar/>
+
         <div className="home-collections-container">
           {/* <Link className='home-index-link' to="/wines">View Our Curated Wine List</Link> */}
           <h2>Explore Categories</h2>
