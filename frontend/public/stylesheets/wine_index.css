@@ -17,12 +17,12 @@
   padding: 10px 20px;
   border-top: 1px solid rgba(255, 180, 17, 0.24);
   border-left: 1px solid black;
-  background-color: rgba(0, 0, 0, 0.555);
+  background-color: rgba(0, 0, 0, 0.950);
   transition: all .4s ease;
 }
 
 .wine-index-item-container:hover {
-  background-color: rgba(0, 0, 0, 0.950);
+  background-color: rgba(0, 0, 0, 0.455);
   border-top: 1px solid rgba(255, 180, 17, 0.500);
 }
 .wine-index-item-container:last-of-type {
