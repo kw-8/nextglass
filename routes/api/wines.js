@@ -51,4 +51,14 @@ router.get("/search/:keyword", (req, res) => {
     .catch(err => res.status(400).json(err))
 })
 
+// specific ones
+router.get("/specific/:ids", (req, res) => {
+  const wines = req.params.ids.split('-')
+  Wine.find({
+    _id: { $in: wines }
+  })
+  .then(wines => (res.json(wines)))
+  .catch(err => res.status(400).json(err))
+});
+
 module.exports = router;

@@ -15,3 +15,7 @@ export const fetchTagWines = tagName => (
 export const searchForWine = query => (
   axios.get(`/api/wines/search/${query}`)
 )
+
+export const fetchSpecificWines = wineIds => (
+  axios.get(`/api/wines/specific/${wineIds.join('-')}`)
+)

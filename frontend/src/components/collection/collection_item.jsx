@@ -6,15 +6,17 @@ class CollectionItem extends React.Component {
   componentDidMount() {
     let { collectionId, collections } = this.props;
     if (collections[collectionId]) {
-      collections[collectionId].wines.forEach(wineId => {
-        this.props.fetchOneWine(wineId)
-      })
+      this.props.fetchSpecificWines(collections[collectionId].wines)
+      // collections[collectionId].wines.forEach(wineId => {
+      //   this.props.fetchOneWine(wineId)
+      // })
       
     } else {
       this.props.getCollection(collectionId).then(res => {
-        res.collection.data.collection.wines.forEach(wineId => {
-          this.props.fetchOneWine(wineId)
-        })
+        this.props.fetchSpecificWines(res.collection.data.collection.wines)
+        // res.collection.data.collection.wines.forEach(wineId => {
+        //   this.props.fetchOneWine(wineId)
+        // })
       })
     }
   }
@@ -32,9 +34,10 @@ class CollectionItem extends React.Component {
 
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
-    // console.log(this.props, prevProps)
-    if (this.props.wines.length !== prevProps.wines.length) {
-      this.props.getCollection(this.props.collectionId);
+    if (!this.props.currentCollection || !prevProps.currentCollection ||
+        this.props.currentCollection.wines.length !== prevProps.currentCollection.wines.length) {
+      this.props.getCollection(this.props.collectionId).then(res => 
+        this.props.fetchSpecificWines(res.collection.data.collection.wines))
     }
   }
 

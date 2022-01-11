@@ -3,7 +3,7 @@ import {
   getCollection,
   updateCollection
 } from '../../actions/collection_actions';
-import { fetchOneWine } from '../../actions/wine_actions';
+import { fetchOneWine, fetchSpecificWines } from '../../actions/wine_actions';
 import CollectionItem from './collection_item';
 
 const mSTP = (state, ownProps) => {
@@ -20,7 +20,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   getCollection: collectionId => dispatch(getCollection(collectionId)),
   updateCollection: collection => dispatch(updateCollection(collection)),
-  fetchOneWine: wineId => dispatch(fetchOneWine(wineId))
+  fetchOneWine: wineId => dispatch(fetchOneWine(wineId)),
+  fetchSpecificWines: wineIds => dispatch(fetchSpecificWines(wineIds))
 })
 
 export default connect(mSTP, mDTP)(CollectionItem);

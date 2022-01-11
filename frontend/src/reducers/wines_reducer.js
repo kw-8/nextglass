@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_WINES,
   RECEIVE_ONE_WINE,
   RECEIVE_TAG_WINES,
-  RECEIVE_SEARCHED_WINES
+  RECEIVE_SEARCHED_WINES,
+  RECEIVE_SPECIFIC_WINES
 } from '../actions/wine_actions'
 
 
@@ -19,6 +20,10 @@ const WinesReducer = (state = {}, action) => {
       return Object.assign({}, action.wines.data)
     case RECEIVE_SEARCHED_WINES:
       return Object.assign({}, action.wines.data)
+    case RECEIVE_SPECIFIC_WINES:
+      action.wines.data.forEach(wine =>
+        {nextState[wine._id] = wine});
+      return nextState;
     default:
       return state;
   }
