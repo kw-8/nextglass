@@ -9,11 +9,12 @@ class WineIndexItem extends React.Component {
     this.collectionsArray = []
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
     let selectedCollection = document.getElementById(this.props.id)
     const updatedCollection = Object.assign({}, this.props.usersCollections[selectedCollection.value])
     updatedCollection.wines.push(this.props.id)
     this.props.updateCollection(updatedCollection)
+    e.target.classList.add("hidden");
   }
 
   render() {
@@ -39,7 +40,7 @@ class WineIndexItem extends React.Component {
               this.collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
             }
           </select> 
-          <button className="wine-index-add-button" onClick={() => this.handleSubmit()}>Add to Collection</button>
+          <button className="wine-index-add-button" onClick={e => this.handleSubmit(e)}>Add to Collection</button>
         </div>
       </div>
     )
