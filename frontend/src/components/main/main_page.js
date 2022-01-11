@@ -18,10 +18,15 @@ class MainPage extends React.Component {
     }
   }
 
+  //close and reset form?
   handleSubmit(e) {
     e.preventDefault();
     const coll = Object.assign({}, this.state, {user: this.props.currentUser.id}, {wines: []})
-    this.props.createCollection(coll).then(this.props.getCollections())
+    this.props.createCollection(coll).then(this.props.getCollections()).then(this.closeForm())
+    let title = document.getElementById("title")
+    let description = document.getElementById("description")
+    title.value = ""
+    description.value = ""
   }
 
   displayForm() {
