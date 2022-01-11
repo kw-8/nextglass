@@ -170,7 +170,7 @@ body {
 h2 {
   margin-top: 36px;
   /* margin-left: 18px; */
-  font-family: 'Sacramento';
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 36px;
   justify-self: center;
 }
@@ -185,6 +185,10 @@ h2 {
   padding: 3vh 3vw;
 
   background-color: white;
+}
+
+#main-search-bar {
+  width: 500px;
 }
 
 input, textarea {

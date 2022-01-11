@@ -1,21 +1,21 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-export function SearchBar() {
+export function MainSearchBar() {
   const history = useHistory();
   const handleSumbit = (e) => {
     e.preventDefault();
 
-    let searchTerm = document.getElementById('nav-search-bar')
+    let searchTerm = document.getElementById('main-search-bar')
     history.push(`/search/${searchTerm.value}`, {wines: []})
     searchTerm.value = ""
   }
 
 
   return (
-    <div className="nav-search-bar">
+    <div className="search-bar">
       <form onSubmit={e => handleSumbit(e)}>
-        <input id="nav-search-bar" type="text" placeholder="Search for a Wine"/>
+        <input id="main-search-bar" type="text" placeholder="Search for a Wine"/>
       </form>
     </div>
   )

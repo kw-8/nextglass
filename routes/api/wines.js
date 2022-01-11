@@ -46,7 +46,7 @@ router.get("/search/:keyword", (req, res) => {
         $project: {title: 1, variety: 1, country: 1, description: 1, price: 1, points: 1, winery: 1, tags: 1, tagIndex: 1, _id: 1, __v: 1} 
       }
     ])
-    .sample(50)
+    .limit(50)
     .then(wines => res.json(wines))
     .catch(err => res.status(400).json(err))
 })
