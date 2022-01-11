@@ -7,6 +7,7 @@ const Wine = require('../../models/Wine');
 router.get("/", (req, res) => {
   Wine
     .find()
+    .limit(20)
     .then(wines => res.json(wines))
     .catch(err => res.status(400).json(err))
 });

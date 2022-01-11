@@ -6,6 +6,7 @@ class WineIndexItem extends React.Component {
     super(props)
 
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.collectionsArray = []
   }
 
   handleSubmit() {
@@ -16,7 +17,7 @@ class WineIndexItem extends React.Component {
   }
 
   render() {
-    const collectionsArray = Object.values(this.props.usersCollections)
+    this.collectionsArray.length === 0 ? this.collectionsArray = Object.values(this.props.usersCollections) : this.collectionsArray = this.collectionsArray;
     return (
       <div className="wine-index-item-container">
         <div className="wine-image"></div>
@@ -35,7 +36,7 @@ class WineIndexItem extends React.Component {
           <label>Choose a Collection</label>
           <select id={this.props.id}>
             {
-              collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
+              this.collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
             }
           </select> 
           <button className="wine-index-add-button" onClick={() => this.handleSubmit()}>Add to Collection</button>
