@@ -25,10 +25,12 @@ export const getCollections = () => dispatch => (
     .then(collections => dispatch(receiveCollections(collections)))
 )
 
-export const getCollection = collectionId => dispatch => (
+export const getCollection = collectionId => dispatch => {
+  return (
   APIUtil.getCollection(collectionId)
-    .then(collection => dispatch(receiveCollection(collection, collection.data._id)))
-)
+    .then(collection => {
+      dispatch(receiveCollection(collection, collection.data.collection._id))})
+)}
 
 export const createCollection = collection => dispatch => (
   APIUtil.createCollection(collection)
