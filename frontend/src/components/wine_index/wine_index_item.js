@@ -10,11 +10,11 @@ class WineIndexItem extends React.Component {
   }
 
   handleSubmit(e) {
-    let selectedCollection = document.getElementById(this.props.id)
-    const updatedCollection = Object.assign({}, this.props.usersCollections[selectedCollection.value])
-    updatedCollection.wines.push(this.props.id)
-    this.props.updateCollection(updatedCollection)
-    e.target.classList.add("hidden");
+    let selectedWine = document.getElementById(this.props.id)
+    const selectedCollection = Object.assign({}, this.props.usersCollections[selectedWine.value])
+    selectedCollection.wines.push(this.props.id)
+    this.props.updateCollection(selectedCollection)
+    e.target.classList.add("hidden")
   }
 
   render() {

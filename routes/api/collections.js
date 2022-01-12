@@ -89,9 +89,8 @@ router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
 
 // update collection
 router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) => {
-  // Malachi commented these out, sorry.
-  // const { errors, isValid } = validateCollectionInput(req.body);
-  // if (!isValid) { return res.status(400).json(errors); };
+  const { errors, isValid } = validateCollectionInput(req.body);
+  if (!isValid) { return res.status(400).json(errors); };
 
   Collection
     .findById(req.body._id)

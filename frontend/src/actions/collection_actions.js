@@ -38,7 +38,7 @@ export const createCollection = collection => dispatch => (
 export const updateCollection = collection => dispatch => {
   return (
   APIUtil.updateCollection(collection)
-    .then(collection => dispatch(receiveCollection(collection, collection.data._id)))
+    .then(collection => dispatch(receiveCollection(collection, collection._id)))
 )}
 
 export const deleteCollection = collectionId => dispatch => (
