@@ -31,7 +31,7 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    let { wines, usersCollections } = this.props
+    let { wines, usersCollections } = this.props 
     return (
       <div className="tag-wines">
         {
@@ -66,7 +66,7 @@ class SearchResults extends React.Component {
                 <label>Choose a Collection</label>
                 <select id={wine._id}>
                   {
-                    usersCollections.map((collection, i) => <option value={i}>{collection.title}</option>)
+                    usersCollections.map((collection, i) => <option value={i}>{collection ? collection.title : " "}</option>)
                   }
                 </select>
                 <button className="tag-add-button" onClick={() => this.handleSubmit(wine._id)}>Add to Collection</button>
