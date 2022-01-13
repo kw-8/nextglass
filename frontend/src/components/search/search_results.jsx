@@ -46,12 +46,19 @@ class SearchResults extends React.Component {
                   {wine.description}
                 </p>
                 <div className="tag-wine-tags-container">
+                {/*Ternary operator splits tags that were not split before adding to DB*/}
                   {
-                    wine.tags.map(tag =>
-                      <Link key={tag} to={`/wines/tags/${tag}`} className="tag-wine-tag">
-                        {tag}
-                      </Link>
-                    )
+                    wine.tags.length === 1 ?
+                      wine.tags[0].split(", ").map(tag =>
+                        <Link key={tag} to={`/wines/tags/${tag}`} className="tag-wine-tag">
+                          {tag}
+                        </Link>
+                      ) :
+                      wine.tags.map(tag =>
+                        <Link key={tag} to={`/wines/tags/${tag}`} className="tag-wine-tag">
+                          {tag}
+                        </Link>
+                      )
                   }
                 </div>
               </div>
