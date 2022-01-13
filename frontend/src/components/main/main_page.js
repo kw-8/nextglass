@@ -18,7 +18,7 @@ class MainPage extends React.Component {
     }
   }
 
-  //close and reset form?
+  //add to collection, close and reset form
   handleSubmit(e) {
     e.preventDefault();
     const coll = Object.assign({}, this.state, {user: this.props.currentUser.id}, {wines: []})
@@ -44,8 +44,6 @@ class MainPage extends React.Component {
   render() {
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
     let curated = ['fruity', 'dry', 'bright', 'complex', 'smooth', 'chewy', 'green', 'spicy']
-    console.log(this.props.collections)
-    // debugger
     return (
       <div className="main-page-contaner">
         <div className="home-page-header">
