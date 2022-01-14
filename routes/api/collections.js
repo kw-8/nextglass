@@ -102,7 +102,7 @@ router.patch("/:id", passport.authenticate("jwt", {session: false}), (req, res) 
         collection.description = req.body.description,
         collection.wines = req.body.wines
         collection.save()
-        return res.json(collection)
+        return res.json({collection})
       }
     })
 });
