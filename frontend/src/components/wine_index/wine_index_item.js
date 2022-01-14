@@ -37,7 +37,7 @@ class WineIndexItem extends React.Component {
           <label>Choose a Collection</label>
           <select id={this.props.id}>
             {
-              this.collectionsArray.map((collection, i) => <option value={i}>{collection.title}</option>)
+              this.collectionsArray.map((collection, i) => <option value={i}>{collection ? collection.title : " "}</option>)
             }
           </select> 
           <button className="wine-index-add-button" onClick={e => this.handleSubmit(e)}>Add to Collection</button>

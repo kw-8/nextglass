@@ -21,11 +21,12 @@ class TagIndex extends React.Component {
     }
   }
 
-  handleSubmit(wine_id) {
+  handleSubmit(e, wine_id) {
     let selectedCollection = document.getElementById(wine_id)
     const updatedCollection = Object.assign({}, this.props.usersCollections[selectedCollection.value])
     updatedCollection.wines.push(wine_id)
-    this.props.updateCollection(updatedCollection)
+    this.props.updateCollection(updatedCollection);
+    e.target.classList.add("hidden")
   }
 
   render() {
@@ -61,10 +62,10 @@ class TagIndex extends React.Component {
                 <label>Choose a Collection</label>
                 <select id={wine._id}>
                   {
-                    usersCollections.map((collection, i) => <option value={i}>{collection.title}</option>)
+                    usersCollections.map((collection, i) => <option value={i}>{collection ? collection.title : " "}</option>)
                   }
                 </select>
-                <button className="tag-add-button" onClick={() => this.handleSubmit(wine._id)}>Add to Collection</button>
+                <button className="tag-add-button" onClick={(e) => this.handleSubmit(e, wine._id)}>Add to Collection</button>
               </div>
             </div>
           )
