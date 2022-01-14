@@ -1,12 +1,14 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import SuggestedWinesContainer from './collection_suggestions_container';
-import CollectionItemContainer from './collection_item_container'
+import CollectionItemContainer from './collection_item_container';
+import { Redirect } from "react-router-dom";
 
 class Collection extends React.Component {
   constructor(props) {
     super(props);
     this.handleDeleteCollection = this.handleDeleteCollection.bind(this);
+    this.amIDeleted = <div></div>
   }
 
   componentDidMount() {
@@ -16,6 +18,7 @@ class Collection extends React.Component {
   handleDeleteCollection(e) {
     e.preventDefault();
     this.props.deleteCollection(this.props.match.params.collectionId);
+    this.amIDeleted = <Redirect to="/" />
   }
 
   render() {
@@ -31,6 +34,7 @@ class Collection extends React.Component {
         <SuggestedWinesContainer
           collectionId={this.props.match.params.collectionId}
         />
+        {this.amIDeleted}
       </div>
       
     )
