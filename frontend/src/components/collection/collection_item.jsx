@@ -30,6 +30,7 @@ class CollectionItem extends React.Component {
     
     updatedCollection.wines = updatedCollection.wines.filter(el => el !== removeButton.id)
     this.props.updateCollection(updatedCollection)
+    e.target.parentNode.style.display = "none"
   }
 
   componentDidUpdate(prevProps) {

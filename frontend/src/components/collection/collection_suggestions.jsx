@@ -16,6 +16,7 @@ class SuggestedWines extends React.Component {
     const updatedCollection = Object.assign({}, collections[collectionId])
     updatedCollection.wines.push(addButton.id)
     this.props.updateCollection(updatedCollection)
+    e.target.parentNode.style.display = "none"
   }
   render() {
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
