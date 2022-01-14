@@ -21,9 +21,10 @@ const WinesReducer = (state = {}, action) => {
     case RECEIVE_SEARCHED_WINES:
       return Object.assign({}, action.wines.data)
     case RECEIVE_SPECIFIC_WINES:
-      action.wines.data.forEach(wine =>
-        {nextState[wine._id] = wine});
-      return nextState;
+      return Object.assign({}, action.wines.data)
+      // action.wines.data.forEach(wine =>
+      //   {nextState[wine._id] = wine});
+      // return nextState;
     default:
       return state;
   }
