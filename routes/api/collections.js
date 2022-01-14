@@ -83,7 +83,7 @@ router.post("/", passport.authenticate("jwt", {session: false}), (req, res) => {
     .save()
     .then(collection => {
       // console.log(collection)
-      return res.json(collection)
+      return res.json({collection})
     })
 });
 

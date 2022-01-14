@@ -34,16 +34,16 @@ export const getCollection = collectionId => dispatch => {
 
 export const createCollection = collection => dispatch => (
   APIUtil.createCollection(collection)
-    .then(collection => dispatch(receiveCollection(collection)))
+    .then(collection => dispatch(receiveCollection(collection, collection.data.collection._id)))
 )
 
 export const updateCollection = collection => dispatch => {
   return (
   APIUtil.updateCollection(collection)
-    .then(collection => dispatch(receiveCollection(collection, collection._id)))
+    .then(collection => dispatch(receiveCollection(collection, collection.data._id)))
 )}
 
 export const deleteCollection = collectionId => dispatch => (
   APIUtil.deleteCollection(collectionId)
-    .then(collectionId => dispatch(removeCollection(collectionId)))
+    .then(collection => dispatch(removeCollection(collection.data._id)))
 )
