@@ -30,7 +30,6 @@ router.get("/:id", (req, res) => {
 
 // search 
 router.get("/search/:keyword", (req, res) => {
-  debugger
   Wine
     .aggregate([
       {
