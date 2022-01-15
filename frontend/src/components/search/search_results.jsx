@@ -11,7 +11,7 @@ class SearchResults extends React.Component {
   componentDidMount() {
     let { searchForWine, searchQuery, getCollections } = this.props;
     searchForWine(searchQuery)
-    console.log(this.props)
+    // console.log(this.props)
     getCollections()
   }
 

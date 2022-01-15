@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class SuggestedWines extends React.Component {
   constructor(props){
     super(props)
-
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -15,8 +14,7 @@ class SuggestedWines extends React.Component {
     const { collectionId, collections } = this.props
     const updatedCollection = Object.assign({}, collections[collectionId])
     updatedCollection.wines.push(addButton.id)
-    this.props.updateCollection(updatedCollection)
-    e.target.parentNode.style.display = "none"
+    this.props.updateCollection(updatedCollection).then(res => { this.props.fetchSpecificWines(res.collection.data.collection.wines)})
   }
   render() {
     let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']

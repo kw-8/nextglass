@@ -23,24 +23,25 @@ class CollectionItem extends React.Component {
 
   handleSubmit(e) {
     const removeButton = e.currentTarget;
-    removeButton.disabled = true
 
     let { collectionId, collections } = this.props;
     const updatedCollection = Object.assign({}, collections[collectionId])
     
     updatedCollection.wines = updatedCollection.wines.filter(el => el !== removeButton.id)
     this.props.updateCollection(updatedCollection)
-    e.target.parentNode.style.display = "none"
   }
 
-  componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
-    if (!this.props.currentCollection || !prevProps.currentCollection ||
-        this.props.currentCollection.wines.length !== prevProps.currentCollection.wines.length) {
-      this.props.getCollection(this.props.collectionId).then(res => 
-        this.props.fetchSpecificWines(res.collection.data.collection.wines))
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   // Typical usage (don't forget to compare props):
+  //   debugger
+  //   if (!this.props.currentCollection || !prevProps.currentCollection ||
+  //       this.props.currentCollection.wines.length !== prevProps.currentCollection.wines.length) {
+  //     this.props.getCollection(this.props.collectionId).then(res => 
+  //       { 
+  //         // debugger
+  //         return this.props.fetchSpecificWines(res.collection.data.collection.wines)})
+  //   }
+  // }
 
   render() {
     let { collections, wines, collectionId } = this.props;
