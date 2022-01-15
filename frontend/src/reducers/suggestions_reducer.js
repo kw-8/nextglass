@@ -6,11 +6,13 @@ const SuggestionReducer = (state = {}, action) => {
     case RECEIVE_COLLECTION:
       if (action.collection.data.suggestions) {
         return Object.assign({}, state, { [action.collectionId]: action.collection.data.suggestions });
-      } else {
+      } else if (state[action.collectionId]) {
         let nextState = Object.assign({}, state);
         let { _id, wines } = action.collection.data.collection;
         nextState[_id] = state[_id].filter(wine => !wines.includes(wine._id))
         return nextState;
+      } else {
+        return state;
       }
     default:
       return state;
