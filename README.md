@@ -2,8 +2,13 @@
 ## [NextGlass](http://nextglass.herokuapp.com/#/welcome)
 NextGlass is a web application that uses your preferences in wine to suggest new wines to taste.
 
+![splash]()
+![home]()
+![tag]()
+![collection]()
+
 ## Background and Overview
-Rather than trying out new drinks and asking all of your friends for recommendations, why not quickly receive recommendations based on your current preferences? Hence, let's try to find your ***NextGlass***.
+Make finding drinks easier. Rather than asking around, get recommendations from what you like. Let's try to find your ***NextGlass***!
 
 ## Functionality and MVP
 - User auth: sign up, login, logout
@@ -15,8 +20,7 @@ Rather than trying out new drinks and asking all of your friends for recommendat
 
 ### Bonus Features
 - Search
-- Wine: create
-- Future: with tensorflow
+- Future: suggestions with tensorflow
 
 ## Technologies and Technical Challenges
 ### Backend: MongoDB and Express
