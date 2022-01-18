@@ -37,8 +37,8 @@ Technical Challenges:
   -  Trim down the 130k dataset to 10k
 - Manipulating data
   -  Original data on [kaggle](https://www.kaggle.com/zynicide/wine-reviews)
-  -  split.js contains the final code we used to change the tags and tagindex data from strings to arrays
-  -  **X** contains the final code we used to update the description data to use UTF-8 characters
+  -  [split.js](https://github.com/kw-8/nextglass/blob/main/split.js) contains the final code we used to change the tags and tagindex data from strings to arrays
+  -  [symbols.js](https://github.com/kw-8/nextglass/blob/main/symbols.js) contains the final code we used to update the description data to use UTF-8 characters
 
 ### Frontend: React, Redux, Axios
 - Landing page contains images linked to curated collections
