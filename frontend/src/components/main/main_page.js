@@ -42,7 +42,27 @@ class MainPage extends React.Component {
   }
   
   render() {
-    let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
+    let tag_icons = [
+      '/grapes/black_grapes_1.jpg',
+      '/grapes/black_grapes_2.jpg',
+      '/grapes/grapes_1.jpg',
+      '/grapes/red_grapes_1.jpg',
+      '/grapes/red_grapes_2.jpg',
+      '/grapes/red_grapes_3.jpg',
+      '/grapes/red_grapes_4.jpg',
+      '/grapes/red_grapes_5.jpg'
+    ]
+    let icons = [
+      '/rose.png',
+      '/bottles_2.jpg',
+      '/white_wine_2.png',
+      // '/bottles_1.jpg',
+      '/drinks.jpg',
+      '/bottles_3.jpg',
+      '/barrels.jpg',
+      '/bottles_4.jpg',
+      '/four_bottles.jpg'
+    ]
     let curated = ['fruity', 'dry', 'bright', 'complex', 'smooth', 'chewy', 'green', 'spicy']
     return (
       <div className="main-page-contaner">
@@ -55,10 +75,10 @@ class MainPage extends React.Component {
           <h2>Explore Categories</h2>
           <div className='curated-tag-container'>
             {
-              curated.map(tag =>
+              curated.map((tag, i) =>
                 <div className='curated-tag'>
                   <Link to={`/wines/tags/${tag}`}>
-                    <img src="/four_bottles.jpg" alt={tag} />
+                    <img src={tag_icons[i % tag_icons.length]} alt={tag} />
                     <p>{tag}</p>
                   </Link>
                 </div>
@@ -75,7 +95,7 @@ class MainPage extends React.Component {
               .map((collection, i) =>
                 <div className='home-collection-item' key={collection._id}>
                   <Link to={`/collections/${collection._id}`}>
-                    <img src={icons[i%3]}></img>
+                    <img src={icons[i % icons.length]}></img>
                     <p>{collection.title}</p>
                   </Link>
                 </div>

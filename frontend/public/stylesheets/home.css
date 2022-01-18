@@ -160,9 +160,9 @@ body {
   font-weight: 500;
 }
 #user-collections img {
+  max-height: 150%;
   min-height: 200px;
   min-width: 200px;
-  max-height: 120%;
   object-fit: scale-down;
   position: absolute;
 }
