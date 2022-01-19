@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { WineImages } from "../wine_images/wine_images";
 
 class SuggestedWines extends React.Component {
   constructor(props){
@@ -17,14 +18,15 @@ class SuggestedWines extends React.Component {
     this.props.updateCollection(updatedCollection).then(res => { this.props.fetchSpecificWines(res.collection.data.collection.wines)})
   }
   render() {
-    let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
     return (
       <div className="suggested-wines-container">
         <h2 className="suggestions-title">Suggestions</h2>
         {
           this.props.suggestions[0] && this.props.suggestions[0].map(suggestion => (
             <div className="suggested-wine" key={suggestion._id}>
-              <div className="suggested-wine-img"><img src={icons[Math.floor(Math.random()*3) % 3]}></img></div>
+              <div className="suggested-wine-img">
+                <WineImages variety={suggestion.variety}></WineImages>
+              </div>
               <div className="suggested-wine-text">
                 <h3 className="suggested-wine-title">{suggestion.title}</h3>
                 <p className="suggested-wine-description">{suggestion.description}</p>

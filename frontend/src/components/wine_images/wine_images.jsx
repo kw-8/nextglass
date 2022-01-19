@@ -112,7 +112,6 @@ export const WineImages = props => {
     image = "generic-red.jpg"
   } else {
     image = "../wine-variety.jpg"
-    console.log(variety)
   }
 
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { WineImages } from "../wine_images/wine_images";
 
 class CollectionItem extends React.Component {
 
@@ -31,18 +32,6 @@ class CollectionItem extends React.Component {
     this.props.updateCollection(updatedCollection)
   }
 
-  // componentDidUpdate(prevProps) {
-  //   // Typical usage (don't forget to compare props):
-  //   debugger
-  //   if (!this.props.currentCollection || !prevProps.currentCollection ||
-  //       this.props.currentCollection.wines.length !== prevProps.currentCollection.wines.length) {
-  //     this.props.getCollection(this.props.collectionId).then(res => 
-  //       { 
-  //         // debugger
-  //         return this.props.fetchSpecificWines(res.collection.data.collection.wines)})
-  //   }
-  // }
-
   render() {
     let { collections, wines, collectionId } = this.props;
     
@@ -55,15 +44,15 @@ class CollectionItem extends React.Component {
         </div>
       </>);
 
-    let icons = ['/rose.png', '/white_wine_2.png', '/four_bottles.jpg']
-
     return (
       <div className="collection-wines-container">
         <h2 className="collection-wines-title">Wines in Your Collection</h2>
         {
           wines.map(wine => (
             <div className="collection-wine">
-              <div className="collection-wine-img"><img src={icons[Math.floor(Math.random() * 3) % 3]}></img></div>
+              <div className="collection-wine-img">
+                <WineImages variety={wine.variety}></WineImages>
+              </div>
               <div className="collection-wine-details" key={wine.id}>
                 <h3 className="collection-wine-title">{wine.title}</h3>
                 <p className="collection-wine-description">{wine.description}</p>
