@@ -11,8 +11,10 @@ const AboutUs = () => {
             <p className='developer-name'>Katherine Wu</p>
             <p className='developer-title'>Project Manager</p>
             <div className='developer-links'>
-            <a className='linkedin' href="https://www.linkedin.com/in/katherine-wu-ca">LinkedIn</a>
-            <a className='github' href="https://github.com/kw-8">Github</a>
+              <a target="_blank" rel="noopener noreferrer"
+              className='linkedin' href="https://www.linkedin.com/in/katherine-wu-ca">LinkedIn</a>
+              <a target="_blank" rel="noopener noreferrer"
+              className='github' href="https://github.com/kw-8">Github</a>
             </div>
           </div>
           <div className='developer'>
@@ -20,8 +22,10 @@ const AboutUs = () => {
             <p className='developer-name'>David Chan</p>
             <p className='developer-title'>Lead Backend Engineer</p>
             <div className='developer-links'>
-            <a className='linkedin' href="https://www.linkedin.com/in/david-chan-4b1929185/">LinkedIn</a>
-            <a className='github' href="https://github.com/dchaan">Github</a>
+              <a target="_blank" rel="noopener noreferrer"
+              className='linkedin' href="https://www.linkedin.com/in/david-chan-4b1929185/">LinkedIn</a>
+              <a target="_blank" rel="noopener noreferrer"
+              className='github' href="https://github.com/dchaan">Github</a>
             </div>
           </div>
           <div className='developer'>
@@ -29,8 +33,10 @@ const AboutUs = () => {
             <p className='developer-name'>Malachi Coberley</p>
             <p className='developer-title'>Lead Frontend Engineer</p>
             <div className='developer-links'>
-            <a className='linkedin' href="https://www.linkedin.com/in/malachi-coberley">LinkedIn</a>
-            <a className='github' href="https://github.com/MalachiCoberley">Github</a>
+              <a target="_blank" rel="noopener noreferrer"
+              className='linkedin' href="https://www.linkedin.com/in/malachi-coberley">LinkedIn</a>
+              <a target="_blank" rel="noopener noreferrer"
+              className='github' href="https://github.com/MalachiCoberley">Github</a>
             </div>
           </div>
         </div>
