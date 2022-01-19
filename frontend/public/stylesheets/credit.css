@@ -1,0 +1,26 @@
+.image-credit-container {
+  margin: 20px;
+  text-align: center;
+}
+.image-credit-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.image-credit-links img {
+  height: 120px;
+  margin-right: 7px;
+}
+
+.image-credit-button:hover {
+  background: rgb(245, 180, 180);
+}
+.image-credit-button {
+  background: rgb(245, 227, 227);
+  color: black;
+  text-decoration: none;
+
+  padding: 0.8em;
+  margin: 5em;
+  border-radius: 2em;
+}

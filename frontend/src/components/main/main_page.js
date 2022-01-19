@@ -117,6 +117,7 @@ class MainPage extends React.Component {
           </div>
         </div>
             <Link className='home-index-link' to="/wines"><h2>View All Wines</h2></Link>
+            <Link className='image-credit-button' to={'/credit'}>Image Credit</Link>
           </div>
         </div>
       </div>

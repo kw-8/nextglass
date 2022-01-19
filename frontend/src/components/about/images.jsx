@@ -2,24 +2,24 @@ import React from 'react';
 
 const ImageCredit = () => {
   const names = [
-    '/grapes/red_grapes_1.jpg',
-    '/grapes/red_grapes_2.jpg',
-    '/grapes/grapes_1.jpg',
-    '/grapes/black_grapes_1.jpg',
-    '/grapes/black_grapes_2.jpg',
-    '/grapes/red_grapes_3.jpg',
-    '/grapes/red_grapes_4.jpg',
-    '/grapes/red_grapes_5.jpg',
+    'red_grapes_1.jpg',
+    'red_grapes_2.jpg',
+    'grapes_1.jpg',
+    'black_grapes_1.jpg',
+    'black_grapes_2.jpg',
+    'red_grapes_3.jpg',
+    'red_grapes_4.jpg',
+    'red_grapes_5.jpg',
 
-    '/bottles_1.jpg',
-    '/bottles_2.jpg',
-    '/bottles_3.jpg',
-    '/bottles_4.jpg',
-    '/barrels.jpg',
-    '/drinks.jpg'
+    '../bottles_1.jpg',
+    '../bottles_2.jpg',
+    '../bottles_3.jpg',
+    '../bottles_4.jpg',
+    '../barrels.jpg',
+    '../drinks.jpg'
   ]
   const links = [
-    'https://www.flickr.com/photos/calliope/105360353.jpg',
+    'https://www.flickr.com/photos/calliope/105360353',
     'https://www.flickr.com/photos/andrenuhrich/384830625',
     'https://www.flickr.com/photos/robert_stok/1818240907',
     'https://www.flickr.com/photos/whitefield_d/7827438256',
@@ -37,14 +37,19 @@ const ImageCredit = () => {
   ]
   return (
     <div className='image-credit-container'>
-      {
-        links.map((link, i) =>
-          <p>
-            <img src={`/grapes/${names[i]}`} />
-            <a href={link}></a>
-          </p>
+      <h2>Image Credits</h2>
+      <div className='image-credit-links'>
+        {
+          links.map((link, i) =>
+            <p>
+              <a href={link}>
+                <img src={`/grapes/${names[i]}`} />
+              </a>
+            </p>
           )
-      }
+        }
+      </div>
+      <p>Pictures we have used are from Flickr under commercial license.</p>
     </div>
   )
 }
