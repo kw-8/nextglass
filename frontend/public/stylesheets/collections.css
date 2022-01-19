@@ -40,7 +40,8 @@
 .suggested-wine-img img,
 .tag-wine-img img {
   height: 160px;
-  object-fit: scale-down;
+  min-width: 160px;
+  object-fit: cover;
 }
 .collection-wine-title,
 .suggested-wine-title,

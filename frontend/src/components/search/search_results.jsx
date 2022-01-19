@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getCollections } from "../../util/collections_api_util";
+import { WineImages } from "../wine_images/wine_images";
 
 class SearchResults extends React.Component {
   constructor(props) {
@@ -38,7 +39,9 @@ class SearchResults extends React.Component {
         {
           wines.map(wine =>
             <div key={wine._id} className="tag-wine-item">
-              <div className="tag-wine-img"></div>
+              <div className="tag-wine-img">
+                <WineImages variety={wine.variety}/>
+              </div>
               <div className="tag-wine-text">
                 <h3 className="tag-wine-title">
                   {wine.title}
