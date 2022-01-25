@@ -107,3 +107,9 @@
   padding-top: 0;
   color: white;
 }
+
+.session-error {
+  margin: 5px;
+  border-bottom: solid rgba(245, 180, 180, 0.8) 1px;
+  color: white;
+}
