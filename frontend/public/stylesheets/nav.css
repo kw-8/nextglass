@@ -91,6 +91,9 @@
 
 .nav-search-bar {
   z-index: 10;
-  width: 230px;
   position: relative;
+}
+
+.nav-search-bar input {
+  width: 300px;
 }
