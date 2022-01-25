@@ -9,12 +9,13 @@ import Tag from './tag'
 const mSTP = (state, ownProps) => ({
   wines: Object.values(state.wines),
   usersCollections: Object.values(state.collections),
-  tagName: ownProps.match.params.tagName
+  tagName: ownProps.match.params.tagName,
+  pageNumber: ownProps.match.params.pageNumber
 })
 
 const mDTP = dispatch => ({
   getCollections: () => dispatch(getCollections()),
-  fetchTagWines: tagName => dispatch(fetchTagWines(tagName)),
+  fetchTagWines: (tagName, pageNumber) => dispatch(fetchTagWines(tagName, pageNumber)),
   updateCollection: collection => dispatch(updateCollection(collection))
 })
 

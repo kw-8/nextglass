@@ -8,9 +8,13 @@ export const fetchOneWine = wineId => (
   axios.get(`/api/wines/${wineId}`)
 )
 
-export const fetchTagWines = tagName => (
-  axios.get(`/api/wines/tags/${tagName}`)
-)
+export const fetchTagWines = (tagName, pageNumber) => {
+  if (pageNumber) {
+    return axios.get(`/api/wines/tags/${tagName}/${pageNumber}`)
+  } else {
+    return axios.get(`/api/wines/tags/${tagName}`)
+  }
+}
 
 export const searchForWine = query => (
   axios.get(`/api/wines/search/${query}`)

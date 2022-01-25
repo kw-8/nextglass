@@ -16,8 +16,17 @@ router.get("/", (req, res) => {
 router.get(`/tags/:tagName`, (req, res) => {
   Wine
     .find({ tags: req.params.tagName })
-      .then(wines => res.json(wines))
-      .catch(err => res.status(400).json(err))
+    .limit(10)
+    .then(wines => res.json(wines))
+    .catch(err => res.status(400).json(err))
+});
+router.get(`/tags/:tagName/:pageNumber`, (req, res) => {
+  Wine
+    .find({ tags: req.params.tagName })
+    .skip( (req.params.pageNumber) * 10 )
+    .limit(10)
+    .then(wines => res.json(wines))
+    .catch(err => res.status(400).json(err))
 });
 
 // get wine by id

@@ -21,6 +21,7 @@ const App = () => (
         <Route path="/about" component={AboutUs} />
         <Route path="/credit" component={ImageCredit} />
         <Route exact path="/wines/tags/:tagName" component={TagContainer} />
+        <Route exact path="/wines/tags/:tagName/:pageNumber" component={TagContainer} />
         <ProtectedRoute exact path="/search/:keyword" component={SearchResultsContainer} />
         <ProtectedRoute exact path="/wines" component={WineIndexContainer} />
         <ProtectedRoute exact path="/collections/:collectionId" component={CollectionContainer} />

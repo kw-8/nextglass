@@ -42,8 +42,8 @@ export const fetchOneWine = wineId => dispatch => (
   .catch(err => console.log(err))
 )
 
-export const fetchTagWines = tagName => dispatch => (
-  APIUtil.fetchTagWines(tagName)
+export const fetchTagWines = (tagName, pageNumber) => dispatch => (
+  APIUtil.fetchTagWines(tagName, pageNumber)
   .then(wines => dispatch(receiveTagWines(wines)))
   .catch(err => console.log(err))
 )

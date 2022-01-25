@@ -10,14 +10,15 @@ class TagIndex extends React.Component {
   }
 
   componentDidMount() {
-    let { tagName, fetchTagWines, getCollections } = this.props;
-    fetchTagWines(tagName)
+    let { tagName, pageNumber, fetchTagWines, getCollections } = this.props;
+    fetchTagWines(tagName, pageNumber)
     getCollections()
   }
-
+  
   // If a link tag is used to navigate from the current tags page, this will force the reload
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.tagName !== this.props.match.params.tagName) {
+    if (prevProps.match.params.tagName !== this.props.match.params.tagName ||
+        prevProps.match.params.pageNumber !== this.props.match.params.pageNumber) {
       window.location.reload();
     }
   }
@@ -29,8 +30,9 @@ class TagIndex extends React.Component {
     this.props.updateCollection(updatedCollection);
     e.target.classList.add("hidden")
   }
-
+  
   render() {
+    console.log(this.props.pageNumber)
     let { tagName, wines, usersCollections } = this.props
     return (
       <div className="tag-wines">
