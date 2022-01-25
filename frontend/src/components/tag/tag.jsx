@@ -33,8 +33,9 @@ class TagIndex extends React.Component {
   
   render() {
     console.log(this.props.pageNumber)
-    let { tagName, wines, usersCollections } = this.props
+    let { tagName, pageNumber, wines, usersCollections } = this.props
     return (
+      <>
       <div className="tag-wines">
         <h2>{tagName}</h2>
         {
@@ -76,6 +77,12 @@ class TagIndex extends React.Component {
           )
         }
       </div>
+      <div className="page-index">
+        { pageNumber && pageNumber > 1 ? <Link to={`/wines/tags/${tagName}/${pageNumber - 1}`}>❮</Link> : ''}
+        { pageNumber == 1 ? <Link to={`/wines/tags/${tagName}`}>❮</Link> : ''}
+        { wines.length == 10 ? <Link to={`/wines/tags/${tagName}/${pageNumber ? parseInt(pageNumber)+1 : 1}`}>❯</Link> : '' }
+      </div>
+      </>
     )
   }
 }

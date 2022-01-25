@@ -23,7 +23,7 @@ router.get(`/tags/:tagName`, (req, res) => {
 router.get(`/tags/:tagName/:pageNumber`, (req, res) => {
   Wine
     .find({ tags: req.params.tagName })
-    .skip( (req.params.pageNumber) * 10 )
+    .skip((req.params.pageNumber) * 10)
     .limit(10)
     .then(wines => res.json(wines))
     .catch(err => res.status(400).json(err))
