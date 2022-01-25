@@ -42,7 +42,7 @@ const AboutUs = () => {
         </div>
         <div className='info-container'>
           <h1>What is NextGlass?</h1>
-          <p>NextGLass is a wine discovery application that takes the guesswork out of finding your new favorite wine.
+          <p>NextGlass is a wine discovery application that takes the guesswork out of finding your new favorite wine.
             <br/> Create collections of your favorite wines, and we'll use those to recommend other wines we think you will like.</p>
           <h2>NextGlass is built using:</h2>
           <strong>
