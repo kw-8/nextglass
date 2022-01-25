@@ -78,9 +78,9 @@ class TagIndex extends React.Component {
         }
       </div>
       <div className="page-index">
-        { pageNumber && pageNumber > 1 ? <Link to={`/wines/tags/${tagName}/${pageNumber - 1}`}>❮</Link> : ''}
-        { pageNumber == 1 ? <Link to={`/wines/tags/${tagName}`}>❮</Link> : ''}
-        { wines.length == 10 ? <Link to={`/wines/tags/${tagName}/${pageNumber ? parseInt(pageNumber)+1 : 1}`}>❯</Link> : '' }
+        { pageNumber && pageNumber > 1 ? <Link to={`/wines/tags/${tagName}/${pageNumber - 1}`}>❮ prev</Link> : ''}
+        { pageNumber == 1 ? <Link to={`/wines/tags/${tagName}`}>❮ prev</Link> : ''}
+        { wines.length == 10 ? <Link to={`/wines/tags/${tagName}/${pageNumber ? parseInt(pageNumber)+1 : 1}`}>next ❯</Link> : '' }
       </div>
       </>
     )
