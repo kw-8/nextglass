@@ -3,8 +3,6 @@
 NextGlass is a web application that uses your preferences in wine to suggest new wines to taste.
 
 ![splash](https://github.com/kw-8/nextglass/blob/main/frontend/public/ss_nextglass.png)
-![home](https://github.com/kw-8/nextglass/blob/main/frontend/public/ss_ng_home.mov)
-![tag](https://github.com/kw-8/nextglass/blob/main/frontend/public/ss_ng_tag.mov)
 ![search](https://github.com/kw-8/nextglass/blob/main/frontend/public/ss_ng_search.jpg)
 
 ## Background and Overview
