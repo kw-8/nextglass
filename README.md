@@ -2,10 +2,8 @@
 ## <div align='center'> [Live Site](http://nextglass.herokuapp.com/#/welcome) | [Background and Functionality](#background-and-overview) | [Technologies](#technologies-and-technical-challenges) </div>
 NextGlass is a web application that uses your preferences in wine to suggest new wines to taste.
 
-![splash]()
-![home]()
-![tag]()
-![collection]()
+![splash](https://github.com/kw-8/nextglass/blob/main/frontend/public/ss_nextglass.png)
+![search](https://github.com/kw-8/nextglass/blob/main/frontend/public/ss_ng_search.jpg)
 
 ## Background and Overview
 Make finding drinks easier. Rather than asking around, get recommendations from what you like. Let's try to find your ***NextGlass***!
