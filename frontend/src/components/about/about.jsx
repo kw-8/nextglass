@@ -7,7 +7,7 @@ const AboutUs = () => {
         <h1>Meet The Team</h1>
         <div className='developers-container'>
           <div className='developer'>
-            <img alt="Katherine Wu. Photograph" src="https://media-exp1.licdn.com/dms/image/C5603AQFNPM_zTRaQXQ/profile-displayphoto-shrink_400_400/0/1539660777364?e=1645056000&v=beta&t=sj2tGDk2QS6_4aTHEqp9606cPW_YNtKl2TrDrxG-Q0A"></img>
+            <img alt="Katherine Wu. Photograph" src="profile-katherinewu.jpg"></img>
             <p className='developer-name'>Katherine Wu</p>
             <p className='developer-title'>Project Manager</p>
             <div className='developer-links'>
@@ -18,7 +18,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className='developer'>
-            <img alt="David Chan. Photograph" src="https://media-exp1.licdn.com/dms/image/C4E03AQEmVkzG1lyNNA/profile-displayphoto-shrink_400_400/0/1564852713465?e=1645056000&v=beta&t=hdUDR0xZGGptoEbRj6t6qfPvzjGCUi4SzlS2JnxCA1E"></img>
+            <img alt="David Chan. Photograph" src="profile-davidchan.jpg"></img>
             <p className='developer-name'>David Chan</p>
             <p className='developer-title'>Lead Backend Engineer</p>
             <div className='developer-links'>
@@ -29,7 +29,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className='developer'>
-            <img alt="Malachi Coberley. Photograph" src="https://media-exp1.licdn.com/dms/image/C5603AQEwsyZPrfX5ow/profile-displayphoto-shrink_400_400/0/1604175245854?e=1645056000&v=beta&t=ZU6Hu4fi0LHlvzP7lD_XNVNrKJ5ODnyFNa75niC4xVs"></img>
+            <img alt="Malachi Coberley. Photograph" src="profile-malachicoberley.jpg"></img>
             <p className='developer-name'>Malachi Coberley</p>
             <p className='developer-title'>Lead Frontend Engineer</p>
             <div className='developer-links'>
